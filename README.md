@@ -1,8 +1,8 @@
 
 
-<h1 align="center">⚜️𝙱𝙾𝚃_𝚁𝙰𝙸𝚉𝙴𝙻⚜️<br></h1>
+<h1 align="center">⚜️ᗷOT ᗴᐯIᒪ⚜️<br></h1>
 <p align="center">
-<img src="https://telegra.ph/file/39272916fd98efa5fec86.jpg" alt="animated" width="540" height="280" />
+<img src="https://telegra.ph/file/206ac00139c6594287da1.jpg" alt="animated" width="540" height="280" />
 </p>
 
 <p align="center">
