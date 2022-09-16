@@ -69,7 +69,7 @@ global.websitex = "https://www.facebook.com/profile.php?id=100079148074519" //ur
 global.botscript = 'https://github.com/DGXeon/CheemBt-MD' //script link
 global.reactmoji = "🌚" //ur menu react emoji
 global.themeemoji = "🌞" //ur theme emoji
-global.packname = "⍣أيفٓݪ أݪخَمཻو่̲໑ࢪجَي⍣" //ur sticker watermark packname
+global.packname = "أيفٓݪ أݪخَمཻو่̲໑ࢪجَي" //ur sticker watermark packname
 global.author = "⍣01228148641⍣" //ur sticker watermark author
 
 //Bot theme media
