@@ -3230,7 +3230,7 @@ url: `${global.websitex}`
 }
 }, {
 urlButton: {
-displayText: 'التبرع 🍜',
+displayText: 'سكربت 🍜',
 url: `${global.botscript}`
 }
 }, {
@@ -3271,7 +3271,7 @@ url: `${global.websitex}`
 }
 }, {
 urlButton: {
-displayText: 'التبرع 🍜',
+displayText: 'سكربت 🍜',
 url: `${global.botscript}`
 }
 }, {
@@ -3313,7 +3313,7 @@ url: `${global.websitex}`
                                 }
                             }, {
 urlButton: {
-displayText: 'التبرع 🍜',
+displayText: 'سكربت 🍜',
 url: `${global.botscript}`
 }
 }, {
@@ -5892,7 +5892,7 @@ console.log(anu)
 XeonBotInc.sendMessage(from,{image:{url:anu}, caption:"اي خدمه يروحي🌚💕!"},{quoted:m})
 }
 break
-case 'ايموجي': {
+case 'emoji': {
 	   if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
 if (!args.join(" ")) return reply('Where is the emoji?')
@@ -5989,7 +5989,7 @@ reply(mess.wait)
 emote(q, "10")
 break
 
-case 'دمج': {
+case 'emojimix': {
 	   if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
 if (!q) reply(`*مثال :* ${prefix + command} 🦄+🤣`)
@@ -6998,7 +6998,7 @@ storee += `\n*「 *PLAY STORE* 」*\n
 }
 reply(storee)
 break
-case 'فيلم':
+case 'film':
 if (isBan) return reply(mess.ban)
 	if (isBanChat) return reply(mess.banChat)
 	reply(mess.wait)
@@ -7012,7 +7012,7 @@ xeonkey.Film(q)
                XeonBotInc.sendMessage(from, { image: { url: data[0].thumb}, caption: krl }, { quoted: fdocs })
 });
 break
-        case 'صوره': case 'صورة': {
+        case 'image': case 'صورة': {
         if (!text) return reply(`Example : ${prefix + command} gojo`)
         let gis = require('g-i-s')
         gis(text, async (error, result) => {
@@ -7082,7 +7082,7 @@ XeonBotInc.sendMessage(m.chat, buttonMessage, { quoted: m })
 })
 }
 break
-case 'هابي-مود': {
+case 'happymod': {
    if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
 if (!args.join(" ")) return replay(`مثال : ${prefix + command} mobile legend`)
@@ -7317,7 +7317,7 @@ teks += `Upload: ${i.berita_diupload}\n`
 teks += `Link: ${i.berita_url}\n`
 }
 teks += "══════════════════"
-XeonBotInc.sendMessage(m.chat, {  : { url : res[0].berita_thumb }, caption: teks }, { quoted : m })
+XeonBotInc.sendMessage(m.chat, { image : { url : res[0].berita_thumb }, caption: teks }, { quoted : m })
 
 })
 break
@@ -7335,7 +7335,7 @@ teks += `News: ${i.berita}\n`
 teks += `Link: ${i.berita_url}\n`
 }
 teks += "══════════════════"
-XeonBotInc.sendMessage(m.chat, {  : { url : res[0].berita_thumb }, caption: teks }, { quoted : m })
+XeonBotInc.sendMessage(m.chat, { image : { url : res[0].berita_thumb }, caption: teks }, { quoted : m })
 
 })
 break
@@ -7374,7 +7374,7 @@ teks += `Upload: ${i.berita_diupload}\n`
 teks += `Link: ${i.berita_url}\n`
 }
 teks += "══════════════════"
-XeonBotInc.sendMessage(m.chat, {  : { url : res[0].berita_thumb }, caption: teks }, { quoted : m })
+XeonBotInc.sendMessage(m.chat, { image : { url : res[0].berita_thumb }, caption: teks }, { quoted : m })
 
 })
 break
@@ -7432,7 +7432,7 @@ teks += `Type: ${i.berita_jenis}\n`
 teks += `Link: ${i.berita_url}\n`
 }
 teks += "══════════════════"
-XeonBotInc.sendMessage(m.chat, {  : { url : res[0].berita_thumb }, caption: teks }, { quoted : m })
+XeonBotInc.sendMessage(m.chat, { image : { url : res[0].berita_thumb }, caption: teks }, { quoted : m })
 
 })
 break
@@ -7485,7 +7485,7 @@ teks = "══════════════════"
 teks += "\nLaughing out loud?🥴\n"
 teks += `\nSource: ${res}\n`
 teks += "══════════════════"
-XeonBotInc.sendMessage(m.chat, {  : { url : res }, caption: teks }, { quoted : m })
+XeonBotInc.sendMessage(m.chat, { image : { url : res }, caption: teks }, { quoted : m })
 break
             case 'cinemaschedule': {
             	            	if (isBan) return reply(mess.ban)
@@ -7550,7 +7550,7 @@ if (isBanChat) return reply(mess.banChat)
                 reply(mess.wait)
                 let anu = await fetchJson('https://raw.githubusercontent.com/iamriz7/kopel_/main/kopel.json')
                 let random = anu[Math.floor(Math.random() * anu.length)]
-                XeonBotInc.sendMessage(m.chat, { : { url: random.male }, caption: `ولد🙎🏻‍♂️` }, { quoted: m })
+                XeonBotInc.sendMessage(m.chat, { image: { url: random.male }, caption: `ولد🙎🏻‍♂️` }, { quoted: m })
                 XeonBotInc.sendMessage(m.chat, { image: { url: random.female }, caption: `بنت🙎🏻‍♀️` }, { quoted: m })
             }
 	    break
@@ -7572,7 +7572,7 @@ if (isBanChat) return reply(mess.banChat)
                 XeonBotInc.sendMessage(m.chat, buttonMessage, { quoted: m })
             }
             break
-case 'ويلبر': case 'animewallpaper': case 'animewall': {
+case 'wallpaper': case 'animewallpaper': case 'animewall': {
 	if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
                 if (!args.join(" ")) return reply("What picture are you looking for??")
@@ -7583,8 +7583,8 @@ if (isBanChat) return reply(mess.banChat)
                     {buttonId: `.wallpaper ${args.join(" ")}`, buttonText: {displayText: 'Next Image'}, type: 1}
                 ]
                 let buttonMessage = {
-                    : { url: result.[0] },
-                    caption: `Title : ${result.title}\nCategory : ${result.type}\nDetail : ${result.source}\nMedia Url : ${result.[2] || result.[1] || result.[0]}`,
+                    image: { url: result.image[0] },
+                    caption: `Title : ${result.title}\nCategory : ${result.type}\nDetail : ${result.source}\nMedia Url : ${result.image[2] || result.image[1] || result.image[0]}`,
                     footer: `${botname}`,
                     buttons: buttons,
                     headerType: 4
@@ -7601,7 +7601,7 @@ const res2 = await XeonBotIncWiki(q).catch(e => {
 return reply('_[ ! ] Error Result Not Found_') 
 }) 
 const result2 = `*Title :* ${res2[0].judul}\n*Wiki :* ${res2[0].wiki}`
-XeonBotInc.sendMessage(from, {  : { url : res2[0].thumb }, caption : result2}) 
+XeonBotInc.sendMessage(from, { image : { url : res2[0].thumb }, caption : result2}) 
 break
             case 'wikimedia': {
             	 	if (isBan) return reply(mess.ban)
@@ -7614,8 +7614,8 @@ break
                     {buttonId: `wikimedia ${text}`, buttonText: {displayText: '➡️الصوره التاليه➡️'}, type: 1}
                 ]
                 let buttonMessage = {
-                    : { url: result.image },
-                    caption: `${themeemoji} Title : ${result.title}\n${themeemoji} Source : ${result.source}\n${themeemoji} Media Url : ${result.}`,
+                    image: { url: result.image },
+                    caption: `${themeemoji} Title : ${result.title}\n${themeemoji} Source : ${result.source}\n${themeemoji} Media Url : ${result.image}`,
                     footer: XeonBotInc.user.name,
                     buttons: buttons,
                     headerType: 4
@@ -7795,7 +7795,7 @@ break
                 let [tgl, bln, thn] = text.split`,`
                 let anu = await primbon.arti_kartu_tarot(tgl, bln, thn)
                 if (anu.status == false) return reply(anu.message)
-                XeonBotInc.sendImage(m.chat, anu.message., `${themeemoji} *Born :* ${anu.message.tgl_lahir}\n${themeemoji} *Tarot Symbol :* ${anu.message.simbol_tarot}\n${themeemoji} *Meaning :* ${anu.message.arti}\n${themeemoji} *Notes :* ${anu.message.catatan}`, m)
+                XeonBotInc.sendImage(m.chat, anu.message.image, `${themeemoji} *Born :* ${anu.message.tgl_lahir}\n${themeemoji} *Tarot Symbol :* ${anu.message.simbol_tarot}\n${themeemoji} *Meaning :* ${anu.message.arti}\n${themeemoji} *Notes :* ${anu.message.catatan}`, m)
             }
             break
             case 'fengshui': {
@@ -8038,7 +8038,7 @@ let buttons = [
 {buttonId: `ytad ${ytvc.mp3}`, buttonText: {displayText: '♫ صوتي'}, type: 1}
 ]
 let buttonMessage = {
-: { url: anu.thumbnail },
+image: { url: anu.thumbnail },
 caption: `*| تشغيل يوتيوب |*
 
 ${global.themeemoji} Title : ${anu.title}
@@ -8084,7 +8084,7 @@ let buttons = [
 {buttonId: `ytad ${res.mp3}`, buttonText: {displayText: '♫ صوتي'}, type: 1}
 ]
 let buttonMessage = {
-: {url:res.thumb},
+image: {url:res.thumb},
 caption: textyt,
 footer: `${botname}`,
 buttons: buttons,
@@ -8156,7 +8156,7 @@ if (isBanChat) return reply(mess.banChat)
 
 *${themeemoji}TITLE:* ${data.title}\n*${themeemoji}QUALITY:* ${data.medias[0].quality}\n*${themeemoji}SIZE:* ${data.medias[0].formattedSize}\n*${themeemoji}DURATION* ${data.duration}\n*${themeemoji}ID:* ${data.medias[0].cached}\n*${themeemoji}LINK:* ${data.url}\n\n*${botname}*`
   buf = await getBuffer(data.thumbnail)
-  XeonBotInc.sendMessage(m.chat, { : { url: data.thumbnail }, jpegThumbnail:buf, caption: `${cap}` }, { quoted: m })
+  XeonBotInc.sendMessage(m.chat, { image: { url: data.thumbnail }, jpegThumbnail:buf, caption: `${cap}` }, { quoted: m })
   XeonBotInc.sendMessage(m.chat, { video: { url: data.medias[0].url }, jpegThumbnail:buf, caption: `*${themeemoji}TITLE:* ${data.title}\n*${themeemoji}QUALITY:* ${data.medias[0].quality}\n*${themeemoji}SIZE:* ${data.medias[0].formattedSize}` }, { quoted: m })  
                 }).catch((err) => {
                     reply(mess.reply)
@@ -8240,7 +8240,7 @@ To Download Media, Please Click One Of The Buttons Below Or Enter The ytmp3/ytmp
 		    XeonBotInc.sendMessage(m.chat, buttonMessage, { quoted: m })
 		} else if (anu.type == 'image') {
 		    anu.media.map(async (url) => {
-		        XeonBotInc.sendMessage(m.chat, { : { url }, caption: `${themeemoji} Title : ${anu.title}\n${themeemoji} Author : ${anu.author.name}\n${themeemoji} Like : ${anu.like}\n${themeemoji} Caption : ${anu.caption}` }, { quoted: m })
+		        XeonBotInc.sendMessage(m.chat, { image: { url }, caption: `${themeemoji} Title : ${anu.title}\n${themeemoji} Author : ${anu.author.name}\n${themeemoji} Like : ${anu.like}\n${themeemoji} Caption : ${anu.caption}` }, { quoted: m })
 		    })
 		}
 	    }
@@ -8760,7 +8760,7 @@ reply(`Successfully Reported To The Owner\n\nPlease Make Sure The Bug Is Valid, 
 case 'sc': case 'script': case 'donate': case 'donate': case 'التسجيل': case 'updatebot': case 'cekbot': case 'sourcecode': {
 	if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
-teks = `*「 ${global.botname} الدعم 」*\n\nيوتيوب: ${global.websitex}\nجروب الدعم: ${global.botscript}\n\nلا تنسى الاشتراك بقناه اليوتيوب 🍜`
+teks = `*「 ${global.botname} Script 」*\n\nيوتيوب: ${global.websitex}\nجروب الدعم: ${global.botscript}\n\nلا تنسى التبرع 🍜`
 let buttons = [
 {buttonId: `menu`, buttonText: {displayText: 'القائمه 🌺'}, type: 1}
 ]
@@ -8794,7 +8794,7 @@ XeonBotInc.sendMessage(from, { react: { text: `${global.reactmoji}`, key: m.key 
                                 }
                             }, {
                                 callButton: {
-                                    displayText: 'الدعم 🍜',
+                                    displayText: 'سكربت 🍜',
                                     url: `${botscript}`
                                 }
                             }, {
@@ -8827,7 +8827,7 @@ XeonBotInc.sendMessage(from, { react: { text: `${global.reactmoji}`, key: m.key 
                         } else if (setbot.templateDocument) {
                         let buttonmenu = [
         	{ urlButton: { displayText: `يوتيوب 🍒`, url : `${websitex}` } },
-            { urlButton: { displayText: `التبرع 🍜`, url: `${botscript}` } },
+            { urlButton: { displayText: `سكربت 🍜`, url: `${botscript}` } },
             { quickReplyButton: { displayText: `كل القائمه 🍱`, id: 'allmenu'} },
             { quickReplyButton: { displayText: `قائمه الخيارات 🍢`, id: 'command'} },
             { quickReplyButton: { displayText: `المطور 🐼🍷 ،`, id: 'owner'} }
@@ -9001,38 +9001,55 @@ await XeonBotInc.send5ButImg(from, `╔═══════✪「 قائمه ا
 ╠ ${prefix}خاص
 ╠ ${prefix}عام
 ╠ ${prefix}وهمي
-╠ ${prefix}بان
-╠ ${prefix}انضم
+╠ ${prefix}بان [on/off]
+╠ ${prefix}انضم [link]
 ╠ ${prefix}تغيربايو
-╠ ${prefix}شيرلجروب
-╠ ${prefix}شيرعام
-╠ ${prefix}شيرلصوره
-╠ ${prefix}شيرلفيديو
-╠ ${prefix}شيرلصوتي
-╠ ${prefix}الموقع
-╠ ${prefix}ضعهاصوره
+╠ ${prefix}شيرلجروب [text]
+╠ ${prefix}شيرعام [text]
+╠ ${prefix}شيرلصوره [image]
+╠ ${prefix}شيرلفيديو [video]
+╠ ${prefix}شيرلصوتي [audio]
+╠ ${prefix}الموقع [text]
+╠ ${prefix}ضعهاصوره [image]
 ╠ ${prefix}تغيرالحقوق
-╠ ${prefix}بلوك
-╠ ${prefix}فك البلوك
+╠ ${prefix}بلوك [tag/number]
+╠ ${prefix}فك البلوك [tag/number]
 ╠═══════✪「 قائمه الجروب 」	        
 ╠${prefix}اعدادات
 ╠${prefix}لينك
-╠${prefix}المؤقت
-╠${prefix}تغيرالصوره
-╠${prefix}تغيرالنيم
-╠${prefix}تغيرالبايو
+╠${prefix}المؤقت [option]
+╠${prefix}تغيرالصوره [image]
+╠${prefix}تغيرالنيم [text]
+╠${prefix}تغيرالبايو [text]
 ╠${prefix}جروب 
-╠${prefix}رستر
-╠${prefix}تعديل
-╠${prefix}اضافه
-╠${prefix}طرد
-╠${prefix}مخفي
-╠${prefix}منشن
-╠${prefix}الروابط
-╠${prefix}الهكر
-╠${prefix}الاباحي
-╠${prefix}رفع
-╠${prefix}تنزيل
+╠${prefix}رسترلينك
+╠${prefix}تعديل [option]
+╠${prefix}اضافه [user]
+╠${prefix}طرد [reply/tag]
+╠${prefix}وهمي [text]
+╠${prefix}تاك [text]
+╠${prefix}antilinkgc [on/off]
+╠${prefix}antilinktg [on/off]
+╠${prefix}antilinktt [on/off]
+╠${prefix}antilinkytch [on/off]
+╠${prefix}antilinkytvid [on/off]
+╠${prefix}antilinkig [on/off]
+╠${prefix}antilinkfb [on/off]
+╠${prefix}antilinktwit [on/off]
+╠${prefix}الروابط [on/off]
+╠${prefix}antivirus [on/off]
+╠${prefix}antitoxic [on/off]
+╠${prefix}antiwame [on/off]
+╠${prefix}autoreply [on/off]
+╠${prefix}الاباحي [on/off]
+╠${prefix}رفع [reply/tag]
+╠${prefix}تنزيل [reply/tag]
+╠${prefix}react [reply emoji]
+╠${prefix}vote
+╠${prefix}devote
+╠${prefix}upvote
+╠${prefix}checkvote
+╠${prefix}delvote
 ╠═══════✪「 قائمه عمل لوجو 」
 ╠${prefix}candy
 ╠${prefix}blackpinkneon
@@ -9157,14 +9174,19 @@ await XeonBotInc.send5ButImg(from, `╔═══════✪「 قائمه ا
 ╠${prefix}soundcloud [url]
 ╠${prefix}zippyshare [url]
 ╠═══════✪「 قائمه البحث 」	
-╠${prefix}تشغيل
-╠${prefix}شغل
-╠${prefix}جوجل
-╠${prefix}جوجل بلاي
-╠${prefix}صوره
-╠${prefix}فيلم
-╠${prefix}ويلبر
-╠${prefix}هابي-مود
+╠${prefix}تشغيل [query]
+╠${prefix}شغل [query]
+╠${prefix}yts [query]
+╠${prefix}lyrics [query]
+╠${prefix}جوجل [query]
+╠${prefix}جوجل بلاي [query]
+╠${prefix}gimage [query]
+╠${prefix}pinterest [query]
+╠${prefix}image [query]
+╠${prefix}film [query]
+╠${prefix}wallpaper [query]
+╠${prefix}searchgc [query]
+╠${prefix}happymod [query]
 ╠${prefix}servermc
 ╠${prefix}mcpedl [query]
 ╠${prefix}tvsearch [query]
@@ -9179,18 +9201,21 @@ await XeonBotInc.send5ButImg(from, `╔═══════✪「 قائمه ا
 ╠ ${prefix}mcserver [ip|port]
 ╠ ${prefix}drakor [query]
 ╠═══════✪「 قائمه التحويل 」
-╠ ${prefix}لصوره
-╠ ${prefix}استيكر
-╠ ${prefix}سرقه
-╠ ${prefix}اكتب
-╠ ${prefix}ايموجي
-╠ ${prefix}لفيديو
-╠ ${prefix}متحركه
-╠ ${prefix}لصوتي
-╠ ${prefix}ebinary
-╠ ${prefix}dbinary
-╠ ${prefix}tinyurl
-╠ ${prefix}زغرفه
+╠ ${prefix}toimage [reply stick]
+╠ ${prefix}sticker [reply img|gif]
+╠ ${prefix}سرقه [reply img|gif|stik]
+╠ ${prefix}اكتب [reply img]
+╠ ${prefix}emoji [emoji]
+╠ ${prefix}tovideo [reply img]
+╠ ${prefix}متحركه [reply stick]
+╠ ${prefix}tourl [reply img]
+╠ ${prefix}tovn [reply aud]
+╠ ${prefix}لصوتي [reply vn]
+╠ ${prefix}toaudio [reply vid]
+╠ ${prefix}ebinary [reply txt]
+╠ ${prefix}dbinary [reply txt]
+╠ ${prefix}tinyurl [link]
+╠ ${prefix}styletext [text]
 ╠${prefix}volume [reply aud]
 ╠${prefix}tempo [reply aud]
 ╠${prefix}bass [reply aud]
@@ -9710,109 +9735,75 @@ await XeonBotInc.send5ButImg(from, `╔═══════✪「 قائمه ا
 ╠ ${prefix}donate
 ╠ ${prefix}request
 ╠ ${prefix}report [bug]
-╚═════════════✪` + '' + ' ', `${botname}`,unicorn, [{"urlButton": {"displayText": "يوتيوب 📍","url": `${websitex}`}},{"urlButton": {"displayText": "التبرع🔖","url": `${botscript}`}},{"quickReplyButton": {"displayText": "تبرع 🍜","id": 'donate'}},{"quickReplyButton": {"displayText": "المطور 👤","id": 'owner'}}] )
+╚═════════════✪` + '' + ' ', `${botname}`,unicorn, [{"urlButton": {"displayText": "يوتيوب 📍","url": `${websitex}`}},{"urlButton": {"displayText": "سكربت🔖","url": `${botscript}`}},{"quickReplyButton": {"displayText": "تبرع 🍜","id": 'donate'}},{"quickReplyButton": {"displayText": "المطور 👤","id": 'owner'}}] )
 break
 case 'ownermenu':
 	   if (isBan) return reply(mess.ban)
 	if (isBanChat) return reply(mess.banChat)
 var unicorn = await getBuffer(picak+'Owner Menu')
-await XeonBotInc.send5ButImg(from, `⋄═──═◞👤 قائمة المالك 👤◟━──━⋄
-
-⧉ -عام
-⧉ يجعل البوت عام للجميع  
- 
-⧉ -خاص
-⧉ يجعل البوت خاص للمالك فقط
- 
-⧉ -حظر
-⧉ حظر شخص من استخدام البوت 
- 
-⧉ -بان
-⧉ حظر اي جروب من استخدام البوت 
-
-⧉ -غادر
-⧉ خروج البوت من الجروب 
- 
-⧉ -انضم
-⧉ ينضم البوت لجروب عن طريق الرابط
- 
-⧉ -بلوك
-⧉ عمل بلوك لشخص من البوت 
-
- ⧉ -فك-البلوك
-⧉ الغاء البلوك عن الشخص من البوت
-
-⧉ -ضعها صوره
-⧉ البوت يضع الصوره بروفايل له
-
-⧉ -تغيرالحقوق
-⧉ تغير حقوق الملصقات
-
-⧉ -شير
-⧉ عمل شير لكل الجروبات في البوت` + '' + ' ', `${botname}`,unicorn, [{"urlButton": {"displayText": "يوتيوب 📍","url": `${websitex}`}},{"urlButton": {"displayText": "التبرع🔖","url": `${botscript}`}},{"quickReplyButton": {"displayText": "تبرع 🍜","id": 'donate'}},{"quickReplyButton": {"displayText": "المطور 👤","id": 'owner'}}] )
+await XeonBotInc.send5ButImg(from, `╔═══════✪「 قائمه المالك 」	
+╠ ${prefix}خاص
+╠ ${prefix}عام
+╠ ${prefix}وهمي
+╠ ${prefix}بان [on/off]
+╠ ${prefix}انضم [link]
+╠ ${prefix}تغيربايو
+╠ ${prefix}بلوك [user]
+╠ ${prefix}فك البلوك [user]
+╠ ${prefix}شيرلجروب [text]
+╠ ${prefix}شيرعام [text]
+╠ ${prefix}شيرلصوره [image]
+╠ ${prefix}شيرلفيديو [video]
+╠ ${prefix}شيرلصوتي [audio]
+╠ ${prefix}الموقع [text]
+╠ ${prefix}ضعهاصوره [image]
+╠ ${prefix}تغيرالحقوقxif
+╚═════════════✪` + '' + ' ', `${botname}`,unicorn, [{"urlButton": {"displayText": "يوتيوب 📍","url": `${websitex}`}},{"urlButton": {"displayText": "سكربت🔖","url": `${botscript}`}},{"quickReplyButton": {"displayText": "تبرع 🍜","id": 'donate'}},{"quickReplyButton": {"displayText": "المطور 👤","id": 'owner'}}] )
 break
 case 'groupmenu':
 	   if (isBan) return reply(mess.ban)
 	if (isBanChat) return reply(mess.banChat)
 var unicorn = await getBuffer(picak+'Group Menu')
-await XeonBotInc.send5ButImg(from, `⋄═──═◞🛡️ قائمة الجروب 🛡️◟━──━⋄
-
-⧉ -المؤقت
-⧉ تشغيل المؤقت لحذف الرسائل بالجروب
-
-⧉ -منشن
-⧉ منشن جماعي لكل الاعضاء
-
-⧉ -مخفي
-⧉ منشن مخفي لكل الاعضاء 
-
-⧉ -المتصلين
-⧉ يجيب لك الاعضاء المتصله
- 
-⧉ -حذف
-⧉ حذف رسالة البوت والاعضاء
- 
-⧉ -لينك
-⧉ جلب رابط الجروب 
-
-⧉ -رستر
-⧉ رستارت لرابط الجروب 
- 
-⧉ -رفع
-⧉ رفع عضو لمشرف 
- 
-⧉ -تنزيل
-⧉ تنزيل عضو من المشرف 
-
-⧉ -تغيرالاسم
-⧉ تغيير اسم الجروب 
- 
-⧉ -تغيرالبايو
-⧉ تغيير وصف الجروب 
-
-⧉ -تغيرالصوره
-⧉ تغيير صورة الجروب 
-
-⧉ -جروب
-⧉ غلق وفتح الجروب 
- 
-⧉ -طرد
-⧉ طرد شخص من الجروب 
- 
-⧉ -اضافه
-⧉ اضافه شخص للجروب
-
-⧉ -الروابط
-⧉ منع ارسال الروابط في الجروب 
-
-⧉ -الهكر
-⧉ منع ارسال الفيروسات في الجروب
-
-⧉ -اعدادات
-⧉ جلب معلومات التحكم بالجروب
-
-⧉ -تعديل
-⧉ السماح للجميع بتعديل معلومات الجروب` + '' + ' ', `${botname}`,unicorn, [{"urlButton": {"displayText": "يوتيوب 📍","url": `${websitex}`}},{"urlButton": {"displayText": "التبرع🔖","url": `${botscript}`}},{"quickReplyButton": {"displayText": "تبرع 🍜","id": 'donate'}},{"quickReplyButton": {"displayText": "المطور 👤","id": 'owner'}}] )
+await XeonBotInc.send5ButImg(from, `╔═══════✪「 قائمه الجروب 」	
+╠${prefix}اعدادات
+╠${prefix}لينك
+╠${prefix}المؤقت [option]
+╠${prefix}تغيرالصوره [image]
+╠${prefix}تغيرالنيم [text]
+╠${prefix}تغيرالبايو [text]
+╠${prefix}جروب
+╠${prefix}رسترلينك
+╠${prefix}تعديل [option]
+╠${prefix}اضافه [user]
+╠${prefix}طرد [reply/tag]
+╠${prefix}وهمي [text]
+╠${prefix}تاك [text]
+╠${prefix}autosticker [on/off]
+╠${prefix}autostickerpc [on/off]
+╠${prefix}leveling [on/off]
+╠${prefix}antilinkgc [on/off]
+╠${prefix}antilinktg [on/off]
+╠${prefix}antilinktt [on/off]
+╠${prefix}antilinkytch [on/off]
+╠${prefix}antilinkytvid [on/off]
+╠${prefix}antilinkig [on/off]
+╠${prefix}antilinkfb [on/off]
+╠${prefix}antilinktwit [on/off]
+╠${prefix}الروابط [on/off]
+╠${prefix}الهكر [on/off]
+╠${prefix}antitoxic [on/off]
+╠${prefix}antiwame [on/off]
+╠${prefix}nsfw [on/off]
+╠${prefix}رفع [reply/tag]
+╠${prefix}تنزيل [reply/tag]
+╠${prefix}react [reply emoji]
+╠${prefix}getpp [reply user]
+╠${prefix}vote
+╠${prefix}devote
+╠${prefix}upvote
+╠${prefix}checkvote
+╠${prefix}delvote
+╚═════════════✪` + '' + ' ', `${botname}`,unicorn, [{"urlButton": {"displayText": "يوتيوب 📍","url": `${websitex}`}},{"urlButton": {"displayText": "سكربت🔖","url": `${botscript}`}},{"quickReplyButton": {"displayText": "تبرع 🍜","id": 'donate'}},{"quickReplyButton": {"displayText": "المطور 👤","id": 'owner'}}] )
 break
 case 'rpgmenu':
 	   if (isBan) return reply(mess.ban)
@@ -9830,7 +9821,7 @@ await XeonBotInc.send5ButImg(from, `╔═══════✪「 RPGقائمه
 ╠${prefix}profile
 ╠${prefix}inventory
 ╠${prefix}leaderboard
-╚═════════════✪` + '' + ' ', `${botname}`,unicorn, [{"urlButton": {"displayText": "يوتيوب 📍","url": `${websitex}`}},{"urlButton": {"displayText": "التبرع🔖","url": `${botscript}`}},{"quickReplyButton": {"displayText": "تبرع 🍜","id": 'donate'}},{"quickReplyButton": {"displayText": "المطور 👤","id": 'owner'}}] )
+╚═════════════✪` + '' + ' ', `${botname}`,unicorn, [{"urlButton": {"displayText": "يوتيوب 📍","url": `${websitex}`}},{"urlButton": {"displayText": "سكربت🔖","url": `${botscript}`}},{"quickReplyButton": {"displayText": "تبرع 🍜","id": 'donate'}},{"quickReplyButton": {"displayText": "المطور 👤","id": 'owner'}}] )
 break
 case 'makermenu':
 	   if (isBan) return reply(mess.ban)
@@ -9944,109 +9935,101 @@ await XeonBotInc.send5ButImg(from, `╔═══════✪「 قائمه ع
 ╠ ${prefix}halloween
 ╠ ${prefix}watercolor
 ╠ ${prefix}classic
-╚═════════════✪` + '' + ' ', `${botname}`,unicorn, [{"urlButton": {"displayText": "يوتيوب 📍","url": `${websitex}`}},{"urlButton": {"displayText": "التبرع🔖","url": `${botscript}`}},{"quickReplyButton": {"displayText": "تبرع 🍜","id": 'donate'}},{"quickReplyButton": {"displayText": "المطور 👤","id": 'owner'}}] )
+╚═════════════✪` + '' + ' ', `${botname}`,unicorn, [{"urlButton": {"displayText": "يوتيوب 📍","url": `${websitex}`}},{"urlButton": {"displayText": "سكربت🔖","url": `${botscript}`}},{"quickReplyButton": {"displayText": "تبرع 🍜","id": 'donate'}},{"quickReplyButton": {"displayText": "المطور 👤","id": 'owner'}}] )
 break
 case 'downloadmenu':
 	   if (isBan) return reply(mess.ban)
 	if (isBanChat) return reply(mess.banChat)
 var unicorn = await getBuffer(picak+'Download Menu')
-await XeonBotInc.send5ButImg(from, `⋄═──═◞🌐 قائمة التنزيل 🌐◟━──━⋄
-
-⧉ -ميديافاير
-⧉ التنزيل من ميديا فاير
- 
-⧉ -انستجرام
-⧉ التنزيل من انستجرام
- 
-⧉ -فيسبوك
-⧉ التنزيل من فيسبوك
- 
-⧉ -تويتر
-⧉ التنزيل من تويتر 
-
-⧉ -تيكتوك
-⧉ التنزيل من تيك توك` + '' + ' ', `${botname}`,unicorn, [{"urlButton": {"displayText": "يوتيوب 📍","url": `${websitex}`}},{"urlButton": {"displayText": "التبرع🔖","url": `${botscript}`}},{"quickReplyButton": {"displayText": "تبرع 🍜","id": 'donate'}},{"quickReplyButton": {"displayText": "المطور 👤","id": 'owner'}}] )
+await XeonBotInc.send5ButImg(from, `╔═══════✪「 قائمه التنزيل 」	
+╠${prefix}instagram [url]
+╠${prefix}igtv [url]
+╠${prefix}igstory [username]
+╠${prefix}facebook [url]
+╠${prefix}fbmp3 [url]
+╠${prefix}twitter [url]
+╠${prefix}twittermp3 [url]
+╠${prefix}tiktok [url]
+╠${prefix}tiktokaudio [url]
+╠${prefix}tiktoknowm [url]
+╠${prefix}instagram [url]
+╠${prefix}igstory [url]
+╠${prefix}mediafire [url]
+╠${prefix}ytmp3 [url|quality]
+╠${prefix}ytmp4 [url|quality]
+╠${prefix}getmusic [yt link]
+╠${prefix}getvideo [yt link]
+╠${prefix}gitclone [repo link]
+╠${prefix}soundcloud [url]
+╠${prefix}zippyshare [url]
+╚═════════════✪` + '' + ' ', `${botname}`,unicorn, [{"urlButton": {"displayText": "يوتيوب 📍","url": `${websitex}`}},{"urlButton": {"displayText": "سكربت🔖","url": `${botscript}`}},{"quickReplyButton": {"displayText": "تبرع 🍜","id": 'donate'}},{"quickReplyButton": {"displayText": "المطور 👤","id": 'owner'}}] )
 break
 case 'searchmenu':
 	   if (isBan) return reply(mess.ban)
 	if (isBanChat) return reply(mess.banChat)
 var unicorn = await getBuffer(picak+'Search Menu')
-await XeonBotInc.send5ButImg(from, ` ⋄═──═◞🔍 قائمة البحث 🔎◟━──━⋄
-
-⧉ -شغل
-⧉ البحث عن مقطع أغنية 
- 
-⧉ -فيلم
-⧉ البحث عن معلومات فلم
- 
-⧉ -انمي
-⧉ البحث عن خلفية انمي 
- 
-⧉ -صوره
-⧉ البحث عن صور عشوائية 
-
-⧉ -تطقيم
-⧉ جلب تطقيمات 
- 
-⧉ -بحث
-⧉ بحث في اليوتيوب بالرابط
- 
-⧉ -جوجل
-⧉ البحث في جوجل ` + '' + ' ', `${botname}`,unicorn, [{"urlButton": {"displayText": "يوتيوب 📍","url": `${websitex}`}},{"urlButton": {"displayText": "التبرع🔖","url": `${botscript}`}},{"quickReplyButton": {"displayText": "تبرع 🍜","id": 'donate'}},{"quickReplyButton": {"displayText": "المطور 👤","id": 'owner'}}] )
+await XeonBotInc.send5ButImg(from, `╔═══════✪「 قائمه البحث 」	
+╠${prefix}شغل [query]
+╠${prefix}تشغيل [query]
+╠${prefix}yts [query]
+╠${prefix}lyrics [query]
+╠${prefix}جوجل [query]
+╠${prefix}gimage [query]
+╠${prefix}pinterest [query]
+╠${prefix}image [query]
+╠${prefix}film [query]
+╠${prefix}جوجل بلاي [query]
+╠${prefix}wallpaper [query]
+╠${prefix}searchgc [query]
+╠${prefix}happymod [query]
+╠${prefix}servermc
+╠${prefix}mcpedl [query]
+╠${prefix}tvsearch [query]
+╠${prefix}wikimedia [query]
+╠${prefix}ytsearch [query]
+╠${prefix}ringtone [query]
+╠${prefix}webtoon [query]
+╠${prefix}anime [query]
+╠${prefix}manga [query]
+╠${prefix}wattpad [query]
+╠ ${prefix}mcserver [ip|port]
+╠${prefix}drakor [query]
+╚═════════════✪` + '' + ' ', `${botname}`,unicorn, [{"urlButton": {"displayText": "يوتيوب 📍","url": `${websitex}`}},{"urlButton": {"displayText": "سكربت🔖","url": `${botscript}`}},{"quickReplyButton": {"displayText": "تبرع 🍜","id": 'donate'}},{"quickReplyButton": {"displayText": "المطور 👤","id": 'owner'}}] )
 break
 case 'convertmenu':
 	   if (isBan) return reply(mess.ban)
 	if (isBanChat) return reply(mess.banChat)
 var unicorn = await getBuffer(picak+'Convert Menu')
-await XeonBotInc.send5ButImg(from, `⋄═──═◞🎆 قائمة التحويل 🎆◟━──━⋄
-
-⧉ -مـلـصـق
-⧉ انشاء ملصقات عادية ومتحركة 
- 
-⧉ -سرقه
-⧉ انشاء ملصق بحقوقك 
- 
-⧉ -دمج
-⧉ دمج اثنين من الاموجي 
-
-⧉ -لصورة
-⧉ تحويل ملصق عادي لصورة 
- 
-⧉ -لفيديو
-⧉ تحويل ملصق متحرك لفيديو 
- 
-⧉ -لصوتي
-⧉ تحويل فيديو لصوتية 
- 
-⧉ -لمتحرك
-⧉ تحويل ملصق لمتحرك
- 
-⧉ -اكتب
-⧉ يكتب لك علي الملصق
-
-⧉ -دبه
-⧉ عمل دبه لصوت الاغنيه
-
-⧉ -ضوضاء
-⧉ عمل ضوضاء لصوت الاغنيه
- 
-⧉ -بطئ
-⧉ عمل تبطئ لصوت الاغنيه
- 
-⧉ -بطئ2
-⧉ عمل تبطئ لصوت الاغنيه
-
-⧉ -سريع
-⧉ عمل تسريع لصوت الاغنيه
- 
-⧉ -طفل
-⧉ عمل الاغنيه بصوت طفل
- 
-⧉ -عكس
-⧉ عمل عكس لاغنيه 
-
-⧉ -روبوت
-⧉ عمل الاغنيه بصوت روبوت` + '' + ' ', `${botname}`,unicorn, [{"urlButton": {"displayText": "يوتيوب 📍","url": `${websitex}`}},{"urlButton": {"displayText": "التبرع🔖","url": `${botscript}`}},{"quickReplyButton": {"displayText": "تبرع 🍜","id": 'donate'}},{"quickReplyButton": {"displayText": "المطور 👤","id": 'owner'}}] )
+await XeonBotInc.send5ButImg(from, `╔═══════✪「 قائمه التحويل 」	
+╠ ${prefix}toimage [reply stick]
+╠ ${prefix}sticker [reply img|gif]
+╠ ${prefix}سرقه [reply img|gif|stik]
+╠ ${prefix}اكتب [reply img]
+╠ ${prefix}emoji [emoji]
+╠ ${prefix}tovideo [reply img]
+╠ ${prefix}متحركه [reply stick]
+╠ ${prefix}tourl [reply img]
+╠ ${prefix}tovn [reply aud]
+╠ ${prefix}لصوتي [reply vn]
+╠ ${prefix}toaudio [reply vid]
+╠ ${prefix}ebinary [reply txt]
+╠ ${prefix}dbinary [reply txt]
+╠ ${prefix}tinyurl [link]
+╠ ${prefix}styletext [text]
+╠${prefix}volume [reply aud]
+╠${prefix}tempo [reply aud]
+╠${prefix}دبه [reply aud]
+╠${prefix}blown [reply aud]
+╠${prefix}deep [reply aud]
+╠${prefix}earrape [reply aud]
+╠${prefix}fast [reply aud]
+╠${prefix}fat [reply aud]
+╠${prefix}nightcore [reply aud]
+╠${prefix}reverse [reply aud]
+╠${prefix}روبوت [reply aud]
+╠${prefix}بطئ [reply aud]
+╠${prefix}squirrel [reply aud]
+╚═════════════✪` + '' + ' ', `${botname}`,unicorn, [{"urlButton": {"displayText": "يوتيوب 📍","url": `${websitex}`}},{"urlButton": {"displayText": "سكربت🔖","url": `${botscript}`}},{"quickReplyButton": {"displayText": "تبرع 🍜","id": 'donate'}},{"quickReplyButton": {"displayText": "المطور 👤","id": 'owner'}}] )
 break
 case 'randomimagemenu':
 	   if (isBan) return reply(mess.ban)
@@ -10065,7 +10048,7 @@ await XeonBotInc.send5ButImg(from, `╔═══════✪「 قائمه ص
 ╠${prefix}wallcode
 ╠${prefix}animewall [query]
 ╠${prefix}animewall2 [query]
-╚═════════════✪` + '' + ' ', `${botname}`,unicorn, [{"urlButton": {"displayText": "يوتيوب 📍","url": `${websitex}`}},{"urlButton": {"displayText": "التبرع🔖","url": `${botscript}`}},{"quickReplyButton": {"displayText": "تبرع 🍜","id": 'donate'}},{"quickReplyButton": {"displayText": "المطور 👤","id": 'owner'}}] )
+╚═════════════✪` + '' + ' ', `${botname}`,unicorn, [{"urlButton": {"displayText": "يوتيوب 📍","url": `${websitex}`}},{"urlButton": {"displayText": "سكربت🔖","url": `${botscript}`}},{"quickReplyButton": {"displayText": "تبرع 🍜","id": 'donate'}},{"quickReplyButton": {"displayText": "المطور 👤","id": 'owner'}}] )
 break
 
 case 'emotemenu':
@@ -10085,7 +10068,7 @@ await XeonBotInc.send5ButImg(from, `╔═══════✪「 قائمه ت
 ╠${prefix}googleemoji
 ╠${prefix}pediaemoji
 ╠${prefix}microsoftemoji
-╚═════════════✪` + '' + ' ', `${botname}`,unicorn, [{"urlButton": {"displayText": "يوتيوب 📍","url": `${websitex}`}},{"urlButton": {"displayText": "التبرع🔖","url": `${botscript}`}},{"quickReplyButton": {"displayText": "تبرع 🍜","id": 'donate'}},{"quickReplyButton": {"displayText": "المطور 👤","id": 'owner'}}] )
+╚═════════════✪` + '' + ' ', `${botname}`,unicorn, [{"urlButton": {"displayText": "يوتيوب 📍","url": `${websitex}`}},{"urlButton": {"displayText": "سكربت🔖","url": `${botscript}`}},{"quickReplyButton": {"displayText": "تبرع 🍜","id": 'donate'}},{"quickReplyButton": {"displayText": "المطور 👤","id": 'owner'}}] )
 break
 case 'imageeffectmenu':
 	   if (isBan) return reply(mess.ban)
@@ -10106,7 +10089,7 @@ await XeonBotInc.send5ButImg(from, `╔═════✪「 قائمه افكت
 ╠${prefix}beautifuleffect
 ╠${prefix}deleteeffect
 ╠${prefix}pixelate
-╚═════════════✪` + '' + ' ', `${botname}`,unicorn, [{"urlButton": {"displayText": "يوتيوب 📍","url": `${websitex}`}},{"urlButton": {"displayText": "التبرع🔖","url": `${botscript}`}},{"quickReplyButton": {"displayText": "تبرع 🍜","id": 'donate'}},{"quickReplyButton": {"displayText": "المطور 👤","id": 'owner'}}] )
+╚═════════════✪` + '' + ' ', `${botname}`,unicorn, [{"urlButton": {"displayText": "يوتيوب 📍","url": `${websitex}`}},{"urlButton": {"displayText": "سكربت🔖","url": `${botscript}`}},{"quickReplyButton": {"displayText": "تبرع 🍜","id": 'donate'}},{"quickReplyButton": {"displayText": "المطور 👤","id": 'owner'}}] )
 break
 case 'animemenu':
 	   if (isBan) return reply(mess.ban)
@@ -10160,7 +10143,7 @@ await XeonBotInc.send5ButImg(from, `╔═══════✪「 قائمه ا
 ╠${prefix}megumin2
 ╠${prefix}لولي
 ╠${prefix}couplepp
-╚═════════════✪` + '' + ' ', `${botname}`,unicorn, [{"urlButton": {"displayText": "يوتيوب 📍","url": `${websitex}`}},{"urlButton": {"displayText": "التبرع🔖","url": `${botscript}`}},{"quickReplyButton": {"displayText": "تبرع 🍜","id": 'donate'}},{"quickReplyButton": {"displayText": "المطور 👤","id": 'owner'}}] )
+╚═════════════✪` + '' + ' ', `${botname}`,unicorn, [{"urlButton": {"displayText": "يوتيوب 📍","url": `${websitex}`}},{"urlButton": {"displayText": "سكربت🔖","url": `${botscript}`}},{"quickReplyButton": {"displayText": "تبرع 🍜","id": 'donate'}},{"quickReplyButton": {"displayText": "المطور 👤","id": 'owner'}}] )
 break
 case 'stickermenu':
 	   if (isBan) return reply(mess.ban)
@@ -10174,7 +10157,7 @@ await XeonBotInc.send5ButImg(from, `╔═══════✪「 قائمه ا
 ╠ ${prefix}ttp
 ╠ ${prefix}كلب
 ╠ ${prefix}lovesticker
-╚═════════════✪` + '' + ' ', `${botname}`,unicorn, [{"urlButton": {"displayText": "يوتيوب 📍","url": `${websitex}`}},{"urlButton": {"displayText": "التبرع🔖","url": `${botscript}`}},{"quickReplyButton": {"displayText": "تبرع 🍜","id": 'donate'}},{"quickReplyButton": {"displayText": "المطور 👤","id": 'owner'}}] )
+╚═════════════✪` + '' + ' ', `${botname}`,unicorn, [{"urlButton": {"displayText": "يوتيوب 📍","url": `${websitex}`}},{"urlButton": {"displayText": "سكربت🔖","url": `${botscript}`}},{"quickReplyButton": {"displayText": "تبرع 🍜","id": 'donate'}},{"quickReplyButton": {"displayText": "المطور 👤","id": 'owner'}}] )
 break
 case 'animestickermenu':
 	   if (isBan) return reply(mess.ban)
@@ -10210,7 +10193,7 @@ await XeonBotInc.send5ButImg(from, `╔═══════✪「 قائمه ا
 ╠${prefix}كراينج
 ╠${prefix}نيكو
 ╠${prefix}جيرا
-╚═════════════✪` + '' + ' ', `${botname}`,unicorn, [{"urlButton": {"displayText": "يوتيوب 📍","url": `${websitex}`}},{"urlButton": {"displayText": "التبرع🔖","url": `${botscript}`}},{"quickReplyButton": {"displayText": "تبرع 🍜","id": 'donate'}},{"quickReplyButton": {"displayText": "المطور 👤","id": 'owner'}}] )
+╚═════════════✪` + '' + ' ', `${botname}`,unicorn, [{"urlButton": {"displayText": "يوتيوب 📍","url": `${websitex}`}},{"urlButton": {"displayText": "سكربت🔖","url": `${botscript}`}},{"quickReplyButton": {"displayText": "تبرع 🍜","id": 'donate'}},{"quickReplyButton": {"displayText": "المطور 👤","id": 'owner'}}] )
 break
 case 'nsfwmenu':
 	   if (isBan) return reply(mess.ban)
@@ -10242,7 +10225,7 @@ await XeonBotInc.send5ButImg(from, `╔═══════✪「 قائمه ا
 ╠${prefix}spank
 ╠${prefix}hneko
 ╠${prefix}nwaifu
-╚═════════════✪` + '' + ' ', `${botname}`,unicorn, [{"urlButton": {"displayText": "يوتيوب 📍","url": `${websitex}`}},{"urlButton": {"displayText": "التبرع🔖","url": `${botscript}`}},{"quickReplyButton": {"displayText": "تبرع 🍜","id": 'donate'}},{"quickReplyButton": {"displayText": "المطور 👤","id": 'owner'}}] )
+╚═════════════✪` + '' + ' ', `${botname}`,unicorn, [{"urlButton": {"displayText": "يوتيوب 📍","url": `${websitex}`}},{"urlButton": {"displayText": "سكربت🔖","url": `${botscript}`}},{"quickReplyButton": {"displayText": "تبرع 🍜","id": 'donate'}},{"quickReplyButton": {"displayText": "المطور 👤","id": 'owner'}}] )
 break
 case 'funmenu':
 	   if (isBan) return reply(mess.ban)
@@ -10301,7 +10284,7 @@ await XeonBotInc.send5ButImg(from, `╔═══════✪「 قائمه ا
 ╠ ${prefix}معرص
 ╠ ${prefix}شرموط
 ╠ ${prefix}اهطل
-╚═════════════✪` + '' + ' ', `${botname}`,unicorn, [{"urlButton": {"displayText": "يوتيوب 📍","url": `${websitex}`}},{"urlButton": {"displayText": "التبرع🔖","url": `${botscript}`}},{"quickReplyButton": {"displayText": "تبرع 🍜","id": 'donate'}},{"quickReplyButton": {"displayText": "المطور 👤","id": 'owner'}}] )
+╚═════════════✪` + '' + ' ', `${botname}`,unicorn, [{"urlButton": {"displayText": "يوتيوب 📍","url": `${websitex}`}},{"urlButton": {"displayText": "سكربت🔖","url": `${botscript}`}},{"quickReplyButton": {"displayText": "تبرع 🍜","id": 'donate'}},{"quickReplyButton": {"displayText": "المطور 👤","id": 'owner'}}] )
 break
 case 'soundmenu':
 	   if (isBan) return reply(mess.ban)
@@ -10469,7 +10452,7 @@ await XeonBotInc.send5ButImg(from, `╔═══════✪「 قائمه ص
 ╠ ${prefix}sound159
 ╠ ${prefix}sound160
 ╠ ${prefix}sound161
-╚═════════════✪` + '' + ' ', `${botname}`,unicorn, [{"urlButton": {"displayText": "يوتيوب 📍","url": `${websitex}`}},{"urlButton": {"displayText": "التبرع🔖","url": `${botscript}`}},{"quickReplyButton": {"displayText": "تبرع 🍜","id": 'donate'}},{"quickReplyButton": {"displayText": "المطور 👤","id": 'owner'}}] )
+╚═════════════✪` + '' + ' ', `${botname}`,unicorn, [{"urlButton": {"displayText": "يوتيوب 📍","url": `${websitex}`}},{"urlButton": {"displayText": "سكربت🔖","url": `${botscript}`}},{"quickReplyButton": {"displayText": "تبرع 🍜","id": 'donate'}},{"quickReplyButton": {"displayText": "المطور 👤","id": 'owner'}}] )
 break
 case 'gamemenu':
 	   if (isBan) return reply(mess.ban)
@@ -10483,7 +10466,7 @@ await XeonBotInc.send5ButImg(from, `╔═══════✪「 قائمه ا
 ╠ ${prefix}guess [option]
 ╠ ${prefix}math [mode]
 ╠ ${prefix}suitpvp [tag]
-╚═════════════✪` + '' + ' ', `${botname}`,unicorn, [{"urlButton": {"displayText": "يوتيوب 📍","url": `${websitex}`}},{"urlButton": {"displayText": "التبرع🔖","url": `${botscript}`}},{"quickReplyButton": {"displayText": "تبرع 🍜","id": 'donate'}},{"quickReplyButton": {"displayText": "المطور 👤","id": 'owner'}}] )
+╚═════════════✪` + '' + ' ', `${botname}`,unicorn, [{"urlButton": {"displayText": "يوتيوب 📍","url": `${websitex}`}},{"urlButton": {"displayText": "سكربت🔖","url": `${botscript}`}},{"quickReplyButton": {"displayText": "تبرع 🍜","id": 'donate'}},{"quickReplyButton": {"displayText": "المطور 👤","id": 'owner'}}] )
 break
 case 'anonymousmenu':
 	   if (isBan) return reply(mess.ban)
@@ -10494,7 +10477,7 @@ await XeonBotInc.send5ButImg(from, `╔═══✪「 قائمه شات مجه�
 ╠${prefix}start
 ╠${prefix}next
 ╠${prefix}leave
-╚═════════════✪` + '' + ' ', `${botname}`,unicorn, [{"urlButton": {"displayText": "يوتيوب 📍","url": `${websitex}`}},{"urlButton": {"displayText": "التبرع🔖","url": `${botscript}`}},{"quickReplyButton": {"displayText": "تبرع 🍜","id": 'donate'}},{"quickReplyButton": {"displayText": "المطور 👤","id": 'owner'}}] )
+╚═════════════✪` + '' + ' ', `${botname}`,unicorn, [{"urlButton": {"displayText": "يوتيوب 📍","url": `${websitex}`}},{"urlButton": {"displayText": "سكربت🔖","url": `${botscript}`}},{"quickReplyButton": {"displayText": "تبرع 🍜","id": 'donate'}},{"quickReplyButton": {"displayText": "المطور 👤","id": 'owner'}}] )
 break
 case 'toolmenu':
 	   if (isBan) return reply(mess.ban)
@@ -10527,7 +10510,7 @@ await XeonBotInc.send5ButImg(from, `╔═══════✪「 قائمه ا
 ╠ ${prefix}سوره التوبه
 ╠ ${prefix}سوره القصص
 ╠ ${prefix}سوره النور
-╚═════════════✪` + '' + ' ', `${botname}`,unicorn, [{"urlButton": {"displayText": "يوتيوب 📍","url": `${websitex}`}},{"urlButton": {"displayText": "التبرع🔖","url": `${botscript}`}},{"quickReplyButton": {"displayText": "تبرع 🍜","id": 'donate'}},{"quickReplyButton": {"displayText": "المطور 👤","id": 'owner'}}] )
+╚═════════════✪` + '' + ' ', `${botname}`,unicorn, [{"urlButton": {"displayText": "يوتيوب 📍","url": `${websitex}`}},{"urlButton": {"displayText": "سكربت🔖","url": `${botscript}`}},{"quickReplyButton": {"displayText": "تبرع 🍜","id": 'donate'}},{"quickReplyButton": {"displayText": "المطور 👤","id": 'owner'}}] )
 break
 case 'databasemenu':
 	   if (isBan) return reply(mess.ban)
@@ -10542,7 +10525,7 @@ await XeonBotInc.send5ButImg(from, `╔═══✪「 قائمه قاعده ا�
 ╠ ${prefix}listmsg
 ╠ ${prefix}getmsg
 ╠ ${prefix}delmsg
-╚═════════════✪` + '' + ' ', `${botname}`,unicorn, [{"urlButton": {"displayText": "يوتيوب 📍","url": `${websitex}`}},{"urlButton": {"displayText": "التبرع🔖","url": `${botscript}`}},{"quickReplyButton": {"displayText": "تبرع 🍜","id": 'donate'}},{"quickReplyButton": {"displayText": "المطور 👤","id": 'owner'}}] )
+╚═════════════✪` + '' + ' ', `${botname}`,unicorn, [{"urlButton": {"displayText": "يوتيوب 📍","url": `${websitex}`}},{"urlButton": {"displayText": "سكربت🔖","url": `${botscript}`}},{"quickReplyButton": {"displayText": "تبرع 🍜","id": 'donate'}},{"quickReplyButton": {"displayText": "المطور 👤","id": 'owner'}}] )
 break
 case 'indomenu':
 	   if (isBan) return reply(mess.ban)
@@ -10573,7 +10556,7 @@ await XeonBotInc.send5ButImg(from, `╔═══════✪「 قائمه ه
 ╠${prefix}covidindo
 ╠${prefix}earthquake
 ╠${prefix}tvschedule
-╚═════════════✪` + '' + ' ', `${botname}`,unicorn, [{"urlButton": {"displayText": "يوتيوب 📍","url": `${websitex}`}},{"urlButton": {"displayText": "التبرع🔖","url": `${botscript}`}},{"quickReplyButton": {"displayText": "تبرع 🍜","id": 'donate'}},{"quickReplyButton": {"displayText": "المطور 👤","id": 'owner'}}] )
+╚═════════════✪` + '' + ' ', `${botname}`,unicorn, [{"urlButton": {"displayText": "يوتيوب 📍","url": `${websitex}`}},{"urlButton": {"displayText": "سكربت🔖","url": `${botscript}`}},{"quickReplyButton": {"displayText": "تبرع 🍜","id": 'donate'}},{"quickReplyButton": {"displayText": "المطور 👤","id": 'owner'}}] )
 break
 case 'indohoroscopemenu':
 	   if (isBan) return reply(mess.ban)
@@ -10610,7 +10593,7 @@ await XeonBotInc.send5ButImg(from, `╔═✪「 قائمه ابراج الهن�
 ╠${prefix}masasubur
 ╠${prefix}zodiak
 ╠${prefix}shio
-╚═════════════✪` + '' + ' ', `${botname}`,unicorn, [{"urlButton": {"displayText": "يوتيوب 📍","url": `${websitex}`}},{"urlButton": {"displayText": "التبرع🔖","url": `${botscript}`}},{"quickReplyButton": {"displayText": "تبرع 🍜","id": 'donate'}},{"quickReplyButton": {"displayText": "المطور 👤","id": 'owner'}}] )
+╚═════════════✪` + '' + ' ', `${botname}`,unicorn, [{"urlButton": {"displayText": "يوتيوب 📍","url": `${websitex}`}},{"urlButton": {"displayText": "سكربت🔖","url": `${botscript}`}},{"quickReplyButton": {"displayText": "تبرع 🍜","id": 'donate'}},{"quickReplyButton": {"displayText": "المطور 👤","id": 'owner'}}] )
 break
 case 'othermenu':
 	   if (isBan) return reply(mess.ban)
@@ -10636,12 +10619,13 @@ await XeonBotInc.send5ButImg(from, `╔═══════✪「 قائمه ا
 ╠ ${prefix}donate
 ╠ ${prefix}request
 ╠ ${prefix}report [bug]
-╚═════════════✪` + '' + ' ', `${botname}`,unicorn, [{"urlButton": {"displayText": "يوتيوب 📍","url": `${websitex}`}},{"urlButton": {"displayText": "التبرع🔖","url": `${botscript}`}},{"quickReplyButton": {"displayText": "تبرع 🍜","id": 'donate'}},{"quickReplyButton": {"displayText": "المطور 👤","id": 'owner'}}] )
+╚═════════════✪` + '' + ' ', `${botname}`,unicorn, [{"urlButton": {"displayText": "يوتيوب 📍","url": `${websitex}`}},{"urlButton": {"displayText": "سكربت🔖","url": `${botscript}`}},{"quickReplyButton": {"displayText": "تبرع 🍜","id": 'donate'}},{"quickReplyButton": {"displayText": "المطور 👤","id": 'owner'}}] )
 break
 case 'tqtt': 
 	   if (isBan) return reply(mess.ban)
 	if (isBanChat) return reply(mess.banChat)
 reply(`شكرا لنفسي🥺💕
+واخويا عبضو 🤡
 وشكرا ليك ياللي بتستخدم البوت🌚💕 `)
 break
             default:
