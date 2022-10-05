@@ -54,23 +54,23 @@ global.doc5 = 'application/pdf'
 global.doc6 = 'application/vnd.android.package-archive'
 
 //owmner v card
-global.vcardowner = ['201228148641'] //ur owner number
-global.ownername = "𝘌  𝘝  𝘐  𝘓   𝘌  𝘓  𝘏  𝘔  𝘖  𝘙  𝘎  𝘠  📍" //ur owner name
-global.ytname = "YT: 𝘌  𝘝  𝘐  𝘓 📍" //ur yt chanel name
-global.socialm = "GitHub: 𝘌  𝘝  𝘐  𝘓 📍" //ur github or insta name
+global.vcardowner = ['201098906252'] //ur owner number
+global.ownername = "ᗴYᗩᗪ❤" //ur owner name
+global.ytname = "YT: ᗴYᗩᗪ❤" //ur yt chanel name
+global.socialm = "GitHub: ᗴYᗩᗪ❤" //ur github or insta name
 global.location = "Egypt, Cairo, Aizawl" //ur location
 
 //bot bomdy 
-global.owner = ['201228148641']
-global.ownertag = '201228148641' //ur tag number
-global.botname = '𝘉  𝘖  𝘛   𝘌  𝘝  𝘐  𝘓   𝘌  𝘓  𝘏  𝘔  𝘖  𝘙  𝘎  𝘠  📍' //ur bot name
-global.linkz = "https://www.facebook.com/profile.php?id=100079148074519" //your theme url which will be displayed on whatsapp
-global.websitex = "https://www.facebook.com/profile.php?id=100079148074519" //ur website to be displayed
-global.botscript = 'https://github.com/DGXeon/CheemBt-MD' //script link
+global.owner = ['249993944651']
+global.ownertag = '249993944651' //ur tag number
+global.botname = '❤️ᗷOT ᗴYᗩᗪ❤' //ur bot name
+global.linkz = "https://chat.whatsapp.com/CMp1e9NHmHU5K5sCM2mmKn" //your theme url which will be displayed on whatsapp
+global.websitex = "https://chat.whatsapp.com/CMp1e9NHmHU5K5sCM2mmKn" //ur website to be displayed
+global.botscript = 'https://chat.whatsapp.com/CMp1e9NHmHU5K5sCM2mmKn' //script link
 global.reactmoji = "🌚" //ur menu react emoji
 global.themeemoji = "🌞" //ur theme emoji
-global.packname = "أيفٓݪ أݪخَمཻو่̲໑ࢪجَي" //ur sticker watermark packname
-global.author = "⍣01228148641⍣" //ur sticker watermark author
+global.packname = "⍣اياد يروحي⍣" //ur sticker watermark packname
+global.author = "⍣249993944651⍣" //ur sticker watermark author
 
 //Bot theme media
 global.thum = fs.readFileSync("./XeonMedia/theme/cheemspic.jpg") //ur thumb pic
@@ -79,7 +79,7 @@ global.err4r = fs.readFileSync("./XeonMedia/theme/cheemspic.jpg") //ur error pic
 global.thumb = fs.readFileSync("./XeonMedia/theme/cheemspic.jpg") //ur thumb pic
 
 //damtabase
-global.premium = ['201228148641'] //ur premium numbers
+global.premium = ['249993944651'] //ur premium numbers
 global.ntilinkytvid = []
 global.ntilinkytch = []
 global.ntilinkig = []
