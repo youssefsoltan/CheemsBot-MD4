@@ -744,7 +744,7 @@ if (m.key.fromMe) return reply(bvl)
 if (isCreator) return reply(bvl)
 kice = m.sender
 await XeonBotInc.groupParticipantsUpdate(m.chat, [kice], 'remove')
-XeonBotInc.sendMessage(from, {text:`\`\`\`「 تم اكتشاف رابط من العرص دا 」\`\`\`\n\n@${kice.split("@")[0]} تم طرد ابن المتناكه دا عشان بعت رابط في الجروب`, contextInfo:{mentionedJid:[kice]}}, {quoted:m})
+XeonBotInc.sendMessage(from, {text:`\`\`\`「 تم اكتشاف رابط 」\`\`\`\n\n@${kice.split("@")[0]} تم طرده عشان بعت رابط في الجروب`, contextInfo:{mentionedJid:[kice]}}, {quoted:m})
 } else {
 }
 
@@ -966,7 +966,7 @@ ${Array.from(room.jawaban, (jawaban, index) => {
 	    isWin = true
 	    }
 	    let winner = isSurrender ? room.game.currentTurn : room.game.winner
-	    let str = `الروم ID: ${room.id}
+	    let str = `الروم ايدي: ${room.id}
 
 ${arr.slice(0, 3).join('')}
 ${arr.slice(3, 6).join('')}
@@ -976,7 +976,7 @@ ${isWin ? `@${winner.split('@')[0]} مبروك كسبت!` : isTie ? `لقد خس
 ❌: @${room.game.playerX.split('@')[0]}
 ⭕: @${room.game.playerO.split('@')[0]}
 
-كتب * استسلام * ل الاستسلام والاعتراف يهزم`
+اكتب * استسلام * ل الاستسلام والاعتراف هزمت`
 	    if ((room.game._currentTurn ^ isSurrender ? room.x : room.o) !== m.chat)
 	    room[room.game._currentTurn ^ isSurrender ? 'x' : 'o'] = m.chat
 	    if (room.x !== room.o) await XeonBotInc.sendText(room.x, str, m, { mentions: parseMention(str) } )
@@ -998,7 +998,7 @@ ${isWin ? `@${winner.split('@')[0]} مبروك كسبت!` : isTie ? `لقد خس
 	    delete this.suit[roof.id]
 	    return !0
 	    }
-	    roof.status = 'play'
+	    roof.status = 'حجر'
 	    roof.asal = m.chat
 	    clearTimeout(roof.waktu)
 	    //delete roof[roof.id].waktu
@@ -1050,7 +1050,7 @@ Click https://wa.me/${botNumber.split`@`[0]}`, m, { mentions: [roof.p, roof.p2] 
 	    else if (k.test(stage) && b.test(stage2)) win = roof.p
 	    else if (k.test(stage) && g.test(stage2)) win = roof.p2
 	    else if (stage == stage2) tie = true
-	    XeonBotInc.sendText(roof.asal, `_*نتائج البدلة*_${tie ? '\nSERIES' : ''}
+	    XeonBotInc.sendText(roof.asal, `_*النتائج*_${tie ? '\nSERIES' : ''}
 
 @${roof.p.split`@`[0]} (${roof.text}) ${tie ? '' : roof.p == win ? ` مبروك كسبت \n` : ` خسرت \n`}
 @${roof.p2.split`@`[0]} (${roof.text2}) ${tie ? '' : roof.p2 == win ? ` مبروك كسبت \n` : ` خسرت \n`}
@@ -1210,7 +1210,7 @@ replay("ايرور🙂!")
 }
 break
 	
-        case 'inventori': case 'inventory': case 'profile':{
+        case 'inventori': case 'inventory': case '':{
         	if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
 if (q.includes('--help')) return reply(examkosong) 
@@ -1248,24 +1248,24 @@ if (isBanChat) return reply(mess.banChat)
     reply(txt)       
   }
  break
- case 'leaderboard':
+ case 'المبيعات':
  if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
 {      
-   let txt = `「 *LEADERBOARD* 」\n\n`
+   let txt = `「 *المبيعات* 」\n\n`
      for (let i of _buruan){
-     txt += `➸ *ID :* ${i.id}\n`
-     txt += `*🐟Fish* : ${i.ikan}\n`
-     txt += `*🐔Chicken* : ${i.ayam}\n`
-     txt += `*🐇Rabbit* : ${i.kelinci}\n`
-     txt += `*🐑Sheep* : ${i.domba}\n`
-     txt += `*🐄Cow* : ${i.sapi}\n`
-     txt += `*🐘Elephant* : ${i.gajah}\n\n`
+     txt += `➸ *ايدي :* ${i.id}\n`
+     txt += `*🐟اسماك* : ${i.ikan}\n`
+     txt += `*🐔دجاج* : ${i.ayam}\n`
+     txt += `*🐇ارانب* : ${i.kelinci}\n`
+     txt += `*🐑خرفان* : ${i.domba}\n`
+     txt += `*🐄بقر* : ${i.sapi}\n`
+     txt += `*🐘فيل* : ${i.gajah}\n\n`
      }
     reply(txt)       
   }
  break
-case 'mining': case 'mine':{
+case 'mining': case 'تعدين':{
 	if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
 if (q.includes('--help')) return reply(examkosong) 
@@ -1278,7 +1278,7 @@ if (q.includes('--help')) return reply(examkosong)
   var emasnya = emas[Math.floor(Math.random() * emas.length)]  
   var emeraldnya = emerald[Math.floor(Math.random() * emerald.length)]  
   setTimeout( () => {
-  let caption = `[ MINING RESULT ]\n*Iron* : ${besinya}\n*Gold* : ${emasnya}\n*Emerald* : ${emeraldnya}`
+  let caption = `[ نتيجة التعدين ]\n*الحديد* : ${besinya}\n*الذهب* : ${emasnya}\n*زمرد* : ${emeraldnya}`
   let buttons = [
       {
        buttonId: `${prefix + command}`, 
@@ -1452,7 +1452,7 @@ if (isBanChat) return reply(mess.banChat)
  }
  break
 
- case 'heal':{
+ case 'هيل':{
  	if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
 if (q.includes('--help')) return reply(examkosong) 
@@ -1461,10 +1461,10 @@ if (q.includes('--help')) return reply(examkosong)
  if (isPotion < 1) return reply(`You Don't Have A Potion, Try Buying It This Way #buypotion _amount_`) 
  addDarah(m.sender, 100)
  kurangPotion(m.sender, 1)
- reply('Success! Your Bood Is Full')
+ reply('النجاح تم ملئ دمك')
  }
  break
- case 'hunt': case 'hunting': {
+ case 'صياده': case 'hunting': {
  	if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
 if (q.includes('--help')) return reply(examkosong) 
@@ -1503,22 +1503,22 @@ if (q.includes('--help')) return reply(examkosong)
    var image = './storage/image/pegunungan.jpg'
    }
  setTimeout( () => {
-  let teksehmazeh = `_[ HUNT RESULT ]_\n`
-     teksehmazeh += `*🐟Fish* : ${ikanmu}\n`
-     teksehmazeh += `*🐔Chicken* : ${ayam}\n`
-     teksehmazeh += `*🐇Rabbit* : ${kelinci}\n`
-     teksehmazeh += `*🐑Sheep* : ${domba}\n`
-     teksehmazeh += `*🐄Cow* : ${sapi}\n`
-     teksehmazeh += `*🐘Elephant* : ${gajah}\n\n`
-     teksehmazeh += `_[ INFO ]_\n`
-     teksehmazeh += `*Location* : ${lokasinya}\n`
-     teksehmazeh += `*Wounded* : ${lukanya}, blood - 10\n`
-     teksehmazeh += `*Remaining blood* : ${getDarah(m.sender)}\n`
+  let teksehmazeh = `_[ نتيجة المطاردة ]_\n`
+     teksehmazeh += `*🐟اسماك* : ${ikanmu}\n`
+     teksehmazeh += `*🐔دجاج* : ${ayam}\n`
+     teksehmazeh += `*🐇ارانب* : ${kelinci}\n`
+     teksehmazeh += `*🐑خرفان* : ${domba}\n`
+     teksehmazeh += `*🐄بقر* : ${sapi}\n`
+     teksehmazeh += `*🐘فيل* : ${gajah}\n\n`
+     teksehmazeh += `_[ معلومات ]_\n`
+     teksehmazeh += `*الموقع* : ${lokasinya}\n`
+     teksehmazeh += `*جرحي* : ${lukanya}, الدم - 10\n`
+     teksehmazeh += `*الدم المتبقي* : ${getDarah(m.sender)}\n`
     let buttons = [
       {
        buttonId: `${prefix + command}`, 
        buttonText: {
-        displayText: 'Hunt Again️🏹'
+        displayText: 'اعاده الصيد🏹'
       }, type: 1},
     ]
     let buttonMessage = {
@@ -1531,7 +1531,7 @@ if (q.includes('--help')) return reply(examkosong)
      XeonBotInc.sendMessage(from, buttonMessage, { quoted: m })      
   }, 5000)  
  setTimeout( () => {
-  reply(`@${m.sender.split("@")[0]} Started Hunting In ${lokasinya}`)     
+  reply(`@${m.sender.split("@")[0]} بدء الصيد في ${lokasinya}`)     
   }, 1000) 
  addIkan(m.sender, ikanmu) 
    addAyam(m.sender, ayam) 
@@ -1564,7 +1564,7 @@ if (isBanChat) return reply(mess.banChat)
                 let user = global.db.data.users[m.sender]
                 user.afkTime = + new Date
                 user.afkReason = text
-                reply(`${m.pushName} هو الان في وضع الاختفاء${text ? ': ' + text : ''}`)
+                reply(`${m.pushName} انه في وضع الاختفاء الان${text ? ': ' + text : ''}`)
             }
             break	
         case 'xo': case 'ttt': case 'اكس-او': {
@@ -1600,9 +1600,9 @@ ${arr.slice(0, 3).join('')}
 ${arr.slice(3, 6).join('')}
 ${arr.slice(6).join('')}
 
-Waiting @${room.game.currentTurn.split('@')[0]}
+انتظر @${room.game.currentTurn.split('@')[0]}
 
-Type *surrender* to surrender and admit defeat`
+اكتب *استسلام* للاستسلام والاعتراف بالهزيمة`
             if (room.x !== room.o) await XeonBotInc.sendText(room.x, str, m, { mentions: parseMention(str) } )
             await XeonBotInc.sendText(room.o, str, m, { mentions: parseMention(str) } )
             } else {
@@ -1619,7 +1619,7 @@ Type *surrender* to surrender and admit defeat`
             }
             }
             break
-            case 'مغادره.الجيم': case 'delttt': {
+            case 'مغادره-الجيم': case 'delttt': {
             	if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
             this.game = this.game ? this.game : {}
@@ -2282,7 +2282,7 @@ if (isBan) return reply(mess.ban)
             	if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
                if (!isCreator) return replay(`${mess.owner}`)
-               if (!text) return replay(`مثال : ${prefix + command} تع خد الباقي01098906252|الجزار الوزير يروحي`)
+               if (!text) return replay(`مثال : ${prefix + command} packname|author`)
           global.packname = text.split("|")[0]
           global.author = text.split("|")[1]
           reply(`Exif Has Been Successfully Changed to\n\n${themeemoji} Packname : ${global.packname}\n${themeemoji} Author : ${global.author}`)
@@ -2308,7 +2308,7 @@ if (isBanChat) return reply(mess.banChat)
 		await XeonBotInc.groupParticipantsUpdate(m.chat, [users], 'add').then((res) => reply(jsonformat(res))).catch((err) => reply(jsonformat(err)))
 	}
 	break
-	case 'رفع': case 'ترقيه': case 'ترقية': {
+	case 'رفع': {
 		if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
 		if (!m.isGroup) return replay(`${mess.group}`)
@@ -2318,7 +2318,7 @@ if (isBanChat) return reply(mess.banChat)
 		await XeonBotInc.groupParticipantsUpdate(m.chat, [users], 'promote').then((res) => reply(jsonformat(res))).catch((err) => reply(jsonformat(err)))
 	}
 	break
-	case 'تنزيل': case 'تخفيض': {
+	case 'تنزيل': {
 		if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
 		if (!m.isGroup) return replay(`${mess.group}`)
@@ -2336,7 +2336,7 @@ if (isBanChat) return reply(mess.banChat)
 		await XeonBotInc.updateBlockStatus(users, 'block').then((res) => reply(jsonformat(res))).catch((err) => reply(jsonformat(err)))
 	}
 	break
-        case 'فك-البلوك': {
+        case 'فك البلوك': {
         	if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
 		if (!isCreator) return replay(`${mess.owner}`)
@@ -2344,7 +2344,7 @@ if (isBanChat) return reply(mess.banChat)
 		await XeonBotInc.updateBlockStatus(users, 'unblock').then((res) => reply(jsonformat(res))).catch((err) => reply(jsonformat(err)))
 	}
 	break
-	    case 'تغيرالاسم': case 'تغيرالنيم': case 'setsubject': {
+	    case 'setname': case 'تغيرالاسم': case 'setsubject': {
 		if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
                 if (!m.isGroup) return replay(`${mess.group}`)
@@ -2413,7 +2413,7 @@ if (isBanChat) return reply(mess.banChat)
             XeonBotInc.sendMessage(m.chat, { text : q ? q : '' , mentions: participants.map(a => a.id)}, { quoted: m })
             }
             break
-	    case 'زغرفه': case 'styletext': {
+	    case 'style': case 'زغرفه': {
 		if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
 	        if (!isPremium && global.db.data.users[m.sender].limit < 1) return reply(mess.endLimit) //wont response when limit runs out\\
@@ -2641,37 +2641,37 @@ if (isBanChat) return reply(mess.banChat)
             }
             break
 case 'autosticker':
-            case 'استيكرتلقائي':
+            case 'autostiker':
    if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
 if (!m.isGroup) return replay(mess.group)
 if (!isBotAdmins) return reply(mess.botAdmin)
 if (!isAdmins && !isCreator) return reply(mess.admin)
 if (args.length < 1) return reply('اكتب auto sticker on لتمكين \ n إيقاف نوع الملصق التلقائي للتعطيل')
-if (args[0]  === 'فتح'){
+if (args[0]  === 'on'){
 if (isAutoSticker) return reply(`بالفعل تنشيط`)
 autosticker.push(from)
 fs.writeFileSync('./database/autosticker.json', JSON.stringify(autosticker))
 reply('autosticker activated')
-} else if (args[0] === 'قفل'){
+} else if (args[0] === 'off'){
 let anu = autosticker.indexOf(from)
 autosticker.splice(anu, 1)
 fs.writeFileSync('./database/autosticker.json', JSON.stringify(autosticker))
 reply('auto sticker deactivated')
 }
 break
-case 'autostickerpc':
+case 'استيكرتلقائي':
             case 'autostikerpc':
    if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
 if (!m.isGroup) return replay(mess.group)
 if (args.length < 1) return reply('type autosticker on to activate\ntype autosticker off to disable')
-if (args[0]  === 'فتح'){
+if (args[0]  === 'on'){
 if (isAutoStick) return reply(`بالفعل نشط!! `)
 _autostick.push(from)
 fs.writeFileSync('./database/autostickpc.json', JSON.stringify(autosticker))
 reply('autosticker pc activated')
-} else if (args[0] === 'قفل'){
+} else if (args[0] === 'off'){
 let anu = autosticker.indexOf(from)
 _autostick.splice(anu, 1)
 fs.writeFileSync('./database/autostickpc.json', JSON.stringify(autosticker))
@@ -3393,7 +3393,7 @@ if (!wokwol.quoted) return replay('الرسالة التي قمت بالرد ع�
 await wokwol.quoted.copyNForward(m.chat, true)
 }
 break
-case 'listpc': {
+case 'المستخدمين': {
    if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
 let anu = await store.chats.all().filter(v => v.id.endsWith('.net')).map(v => v)
@@ -3404,7 +3404,7 @@ for (let i of anu) {
 XeonBotInc.sendTextWithMentions(m.chat, teks, m)
 }
 break
-case 'المستخدمين': {
+case 'الجروبات': {
    if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
 let anu = await store.chats.all().filter(v => v.id.endsWith('@g.us')).map(v => v.id)
@@ -3431,7 +3431,7 @@ let liston = 1
 XeonBotInc.sendText(m.chat, '     「 قائمه المتصلين 」\n\n' + online.map(v => `${liston++} . @` + v.replace(/@.+/, '')).join`\n`, m, { mentions: online })
 }
 break
-case 'patrick':
+case 'بسيط':
 case 'patricksticker': {
 	                	            	            	if (isBan) return reply(mess.ban)
 	if (isBanChat) return reply(mess.banChat)
@@ -3450,14 +3450,14 @@ if (isBanChat) return reply(mess.banChat)
 
          }
          break
-case 'attp': {
+case 'استايل': {
 if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
            if (!text) reply(`Use ${prefix}attp hello\n*مثال : ${prefix + command} ${ownername}*` )
            await XeonBotInc.sendMedia(m.chat, `https://cililitan.herokuapp.com/api/attp?teks=${text}`, 'Xeon', 'Op', m, {asSticker: true}).catch((err) => reply(mess.error))
          }
          break
-case 'ttp': {
+case 'استايل2': {
 if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
            if (!text) return reply(`*مثال : ${prefix + command} hello*`)
@@ -3496,7 +3496,7 @@ encmedia = await XeonBotInc.sendImageAsSticker(from, wifegerakx, m, { packname: 
 await fs.unlinkSync(encmedia)
 }
 break
-case 'lovesticker':
+case 'استيكرحب':
 case 'lovestick' :{
 	            	            	if (isBan) return reply(mess.ban)
 	if (isBanChat) return reply(mess.banChat)
@@ -3613,14 +3613,14 @@ XeonBotInc.sendMessage(from, {image : nyz3, caption:`By ${global.botname}`}, {qu
 error("Error!")
 }
 break
-case 'woof':
+case 'كلاب':
 case '8ball':
 case 'goose':
 case 'gecg':
-case 'feed':
-case 'avatar':
-case 'lizard':
-case 'meow':
+case 'انمي-فيد':
+case 'انمي-افاتار':
+case 'حربايه':
+case 'قطه':
 case 'tickle':
    if (isBan) return reply(mess.ban)
 	if (isBanChat) return reply(mess.banChat)
@@ -3810,7 +3810,7 @@ reply(mess.wait)
                     return('Error!')
                 })
 break   
-case 'animenom' :
+case 'انمي-نوم' :
    if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
 if (!m.isGroup) return replay(mess.group)
@@ -3828,7 +3828,7 @@ if (!m.isGroup) return replay(mess.group)
                     return('Error!')
                 })
 break
-case 'waifu3':
+case 'انمي-وايفي2':
    if (isBan) return reply(mess.ban)
 	if (isBanChat) return reply(mess.banChat)
 reply(mess.wait)						
@@ -3847,7 +3847,7 @@ reply(mess.wait)
                     return('Error!')
                 })
 break
-case 'neko2':
+case 'انمي-نيكو':
    if (isBan) return reply(mess.ban)
 	if (isBanChat) return reply(mess.banChat)
 reply(mess.wait)						
@@ -3885,7 +3885,7 @@ reply(mess.wait)
                     return('Error!')
                 })
 break   
-case 'animeslap':
+case 'انمي-سليب':
    if (isBan) return reply(mess.ban)
 	if (isBanChat) return reply(mess.banChat)
 reply(mess.wait)						
@@ -3904,7 +3904,7 @@ reply(mess.wait)
                     return('Error!')
                 })
 break
-case 'animepat':
+case 'انمي-بات':
    if (isBan) return reply(mess.ban)
 	if (isBanChat) return reply(mess.banChat)
 reply(mess.wait)						
@@ -3961,7 +3961,7 @@ reply(mess.wait)
                     return('Error!')
                 })
 break
-case 'animekiss':
+case 'انمي-كيس':
    if (isBan) return reply(mess.ban)
 	if (isBanChat) return reply(mess.banChat)
 reply(mess.wait)						
@@ -3999,7 +3999,7 @@ reply(mess.wait)
                     return('Error!')
                 })
 break
-case 'animespank':
+case 'انمي-سبانك':
    if (isBan) return reply(mess.ban)
 	if (isBanChat) return reply(mess.banChat)
 reply(mess.wait)						
@@ -4018,7 +4018,7 @@ reply(mess.wait)
                     return('Error!')
                 })
 break
-case 'animecry':
+case 'انمي-كري':
    if (isBan) return reply(mess.ban)
 	if (isBanChat) return reply(mess.banChat)
 reply(mess.wait)						
@@ -4037,7 +4037,7 @@ reply(mess.wait)
                     return('Error!')
                 })
 break
-case 'animekill':
+case 'انمي-كيل':
    if (isBan) return reply(mess.ban)
 	if (isBanChat) return reply(mess.banChat)
 reply(mess.wait)						
@@ -4075,7 +4075,7 @@ reply(mess.wait)
                     return('Error!')
                 })
 break
-case 'animebite':
+case 'انمي-بيتي':
    if (isBan) return reply(mess.ban)
 	if (isBanChat) return reply(mess.banChat)
 reply(mess.wait)						
@@ -4113,7 +4113,7 @@ reply(mess.wait)
                     return('Error!')
                 })
 break
-case 'animebully':
+case 'انمي-بولي':
    if (isBan) return reply(mess.ban)
 	if (isBanChat) return reply(mess.banChat)
 reply(mess.wait)						
@@ -4132,7 +4132,7 @@ reply(mess.wait)
                     return('Error!')
                 })
 break
-case 'animebonk':
+case 'انمي-بولك':
    if (isBan) return reply(mess.ban)
 	if (isBanChat) return reply(mess.banChat)
 reply(mess.wait)						
@@ -4151,7 +4151,7 @@ reply(mess.wait)
                     return('Error!')
                 })
 break
-case 'animewink':
+case 'انمي-وينك':
    if (isBan) return reply(mess.ban)
 	if (isBanChat) return reply(mess.banChat)
 reply(mess.wait)						
@@ -4170,7 +4170,7 @@ reply(mess.wait)
                     return('Error!')
                 })
 break
-case 'animepoke':
+case 'انمي-بوكي':
    if (isBan) return reply(mess.ban)
 	if (isBanChat) return reply(mess.banChat)
 reply(mess.wait)						
@@ -4189,7 +4189,7 @@ reply(mess.wait)
                     return('Error!')
                 })
 break
-case 'animesmile':
+case 'انمي-سميلي':
    if (isBan) return reply(mess.ban)
 	if (isBanChat) return reply(mess.banChat)
 reply(mess.wait)						
@@ -4246,7 +4246,7 @@ reply(mess.wait)
                     return('Error!')
                 })
 break
-case 'animeblush':
+case 'انمي-بلوش':
    if (isBan) return reply(mess.ban)
 	if (isBanChat) return reply(mess.banChat)
 reply(mess.wait)						
@@ -4265,7 +4265,7 @@ reply(mess.wait)
                     return('Error!')
                 })
 break
-case 'animesmug':
+case 'انمي-سموج':
    if (isBan) return reply(mess.ban)
 	if (isBanChat) return reply(mess.banChat)
 reply(mess.wait)						
@@ -4284,7 +4284,7 @@ reply(mess.wait)
                     return('Error!')
                 })
 break
-case 'animeglomp':
+case 'انمي-جلومب':
    if (isBan) return reply(mess.ban)
 	if (isBanChat) return reply(mess.banChat)
 reply(mess.wait)						
@@ -4303,7 +4303,7 @@ reply(mess.wait)
                     return('Error!')
                 })
 break
-case 'animehappy':
+case 'انمي-هابي':
    if (isBan) return reply(mess.ban)
 	if (isBanChat) return reply(mess.banChat)
 reply(mess.wait)						
@@ -4322,7 +4322,7 @@ reply(mess.wait)
                     return('Error!')
                 })
 break
-case 'animedance':
+case 'انمي-دانسي':
    if (isBan) return reply(mess.ban)
 	if (isBanChat) return reply(mess.banChat)
 reply(mess.wait)						
@@ -4379,7 +4379,7 @@ reply(mess.wait)
                     return('Error!')
                 })
 break
-case 'animehandhold':
+case 'انمي-هاندهولد':
    if (isBan) return reply(mess.ban)
 	if (isBanChat) return reply(mess.banChat)
 reply(mess.wait)						
@@ -4502,7 +4502,7 @@ var walb = [
                 })
 //XeonBotInc.sendMessage(m.chat,{image:{url:wallpaper[i].image},caption:`*Query :* ${q}`})            
 break
-case 'كراي':case 'كيل':case 'هوج':case 'بات':case 'ليك':case 'كيس':case 'بيتي':case 'ياات':case 'نيكو':case 'بولي':case 'بونك':case 'وينك':case 'بوكي':case 'nom':case 'سلاب':case 'صميلي':case 'ويفي':case 'اووو':case 'بلسيش':case 'سموج':case 'جلومب':case 'هابي':case 'دانسي':case 'cringe':case 'قولدي':case 'هاي.فيف':case 'shinobu':case 'megumin':case 'هاندهولد':
+case 'cry':case 'kill':case 'hug':case 'pat':case 'lick':case 'kiss':case 'bite':case 'yeet':case 'neko':case 'bully':case 'bonk':case 'wink':case 'poke':case 'nom':case 'slap':case 'smile':case 'wave':case 'awoo':case 'blush':case 'smug':case 'glomp':case 'happy':case 'dance':case 'cringe':case 'cuddle':case 'highfive':case 'shinobu':case 'megumin':case 'handhold':
    if (isBan) return reply(mess.ban)
 	if (isBanChat) return reply(mess.banChat)
 					axios.get(`https://api.waifu.pics/sfw/${command}`)
@@ -4510,7 +4510,7 @@ case 'كراي':case 'كيل':case 'هوج':case 'بات':case 'ليك':case 'ك
 						XeonBotInc.sendImageAsSticker(m.chat, data.url, m, { packname: global.packname, author: global.author })
 					})
 					break
-case 'waifu': case 'لولي':
+case 'waifu': case 'انمي-وايفي':
 					   if (isBan) return reply(mess.ban)
 	if (isBanChat) return reply(mess.banChat)
 					reply(mess.wait)
@@ -4519,7 +4519,7 @@ case 'waifu': case 'لولي':
 					XeonBotInc.sendImage(m.chat, data.url, mess.success, m)
 					})
 					break
-case 'ناروتو':
+case 'انمي-ناروتو':
 			if (isBan) return reply(mess.ban)
 	if (isBanChat) return reply(mess.banChat)
 				reply(mess.wait)
@@ -5892,7 +5892,7 @@ console.log(anu)
 XeonBotInc.sendMessage(from,{image:{url:anu}, caption:"اي خدمه يروحي🌚💕!"},{quoted:m})
 }
 break
-case 'emoji': {
+case 'ايوجي': {
 	   if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
 if (!args.join(" ")) return reply('Where is the emoji?')
@@ -5904,21 +5904,21 @@ await XeonBotInc.sendMessage(from, {text:"reply #s to this image to make sticker
 break
 
 case 'igemoji': 
-case 'instagramemoji': 
+case 'ايموجي-انستجرام': 
 if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
 if (!q) return reply("Enter emoji, maximum 1 emoji, eg?" + ` ${prefix + command} 😀`)
 reply(mess.wait)
 emote(q, "11")
 break
-case 'iphoneemoji': 
+case 'ايموجي-ايفون': 
 if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
 if (!q) return reply("Enter emoji, max 1 emoji, eg?" + ` ${prefix + command} 😀`)
 reply(mess.wait)
 emote(q, "0")
 break
-case 'googleemoji': 
+case 'ايموجي-جوجل': 
 if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
 if (!q) return reply("Enter emoji, max 1 emoji, eg?" + ` ${prefix + command} 😀`)
@@ -5939,21 +5939,21 @@ if (!q) return reply("Enter emoji, max 1 emoji, eg?" + ` ${prefix + command} �
 reply(mess.wait)
 emote(q, "3")
 break
-case 'whatsappemoji': 
+case 'ايموجي-واتسابi': 
 if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
 if (!q) return reply("Enter emoji, max 1 emoji, eg?" + ` ${prefix + command} 😀`)
 reply(mess.wait)
 emote(q, "4")
 break
-case 'twitteremoji': 
+case 'ايموجي-تويتر': 
 if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
 if (!q) return reply("Enter emoji, max 1 emoji, eg?" + ` ${prefix + command} 😀`)
 reply(mess.wait)
 emote(q, "5")
 break
-case 'facebookemoji': 
+case 'ايموجي-فيسبوك': 
 case 'fbemoji': 
 if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
@@ -5989,7 +5989,7 @@ reply(mess.wait)
 emote(q, "10")
 break
 
-case 'emojimix': {
+case 'دمج': {
 	   if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
 if (!q) reply(`*مثال :* ${prefix + command} 🦄+🤣`)
@@ -6252,7 +6252,7 @@ case 'ig2': case 'igdl2': case 'instagram2': {
 	            hx.igdl(urlnya)
 	            .then(async(result) => {	  
 	            var halo = 0		
-	            XeonBotInc.sendMessage(m.chat, { image: { url: result.user.profilePicUrl }, jpegThumbnail: await getBuffer(result.user.profilePicUrl), caption: `*----「 INSTAGRAM DOWNLOADER 」----*\n\n*${themeemoji} Username :* ${result.user.username}\n*${themeemoji} Fullname :* ${result.user.fullName}\n*${themeemoji} Followers :* ${result.user.followers}\n*${themeemoji} Following :* ${result.user.following}\n*${themeemoji} ID :* ${result.user.id}\n*${themeemoji} Filetype :* ${result.medias[0].fileType}\n*${themeemoji} Type :* ${result.medias[0].type}\n*${themeemoji} Jumlah Media :* ${result.medias.length}\n*${themeemoji} Url :* ${text}\n\n*${botname}*` }, { quoted: m })	                                  	                      	            
+	            XeonBotInc.sendMessage(m.chat, { image: { url: result.user.profilePicUrl }, jpegThumbnail: await getBuffer(result.user.PicUrl), caption: `*----「 INSTAGRAM DOWNLOADER 」----*\n\n*${themeemoji} Username :* ${result.user.username}\n*${themeemoji} Fullname :* ${result.user.fullName}\n*${themeemoji} Followers :* ${result.user.followers}\n*${themeemoji} Following :* ${result.user.following}\n*${themeemoji} ID :* ${result.user.id}\n*${themeemoji} Filetype :* ${result.medias[0].fileType}\n*${themeemoji} Type :* ${result.medias[0].type}\n*${themeemoji} Jumlah Media :* ${result.medias.length}\n*${themeemoji} Url :* ${text}\n\n*${botname}*` }, { quoted: m })	                                  	                      	            
 		        for(let i of result.medias) {		
 		        if(i.url.includes('mp4')){		           			    				
 				let link = await getBuffer(i.url)
@@ -6265,7 +6265,7 @@ case 'ig2': case 'igdl2': case 'instagram2': {
             }).catch((err) => reply(mess.error))
             }		
 			break
-case 'igdl': case 'instagram': case 'instagramreels': case 'igreels': {
+case 'انستجرام': case 'instagram': case 'instagramreels': case 'igreels': {
    if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
 if (!args[0]) return reply(`مثال :\n${prefix + command} https://www.instagram.com/p/CcvJGuxh9VI/?igshid=YmMyMTA2M2Y=`)
@@ -6354,7 +6354,7 @@ case 'igtv': {
    if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
                 if (!text) return reply(`Where is the link boss?`)
-                const { instagramdl, instagramdlv2, instagramdlv3 } = require('@bochilteam/scraper')
+                const { instagramdl, instagramdlv2, instagramdlv3 } = require('@boc4team/scraper')
                 if (!isUrl(args[0]) && !args[0].includes('instagram.com')) return reply('*The link you provided is not valid*')
                 instagramdlv3(`${text}`).then(async (data) => {            
                 var buf = await getBuffer(data[0].thumbnail)        
@@ -6364,7 +6364,7 @@ if (isBanChat) return reply(mess.banChat)
                 })
             }
             break
-            case 'twitter': case 'td': case 'twitterdl': {     
+            case 'twitter': case 'td': case 'تويتر': {     
    if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)	             
              if (!text) return reply(`Where is the link?`)
@@ -6463,7 +6463,7 @@ sourceUrl: args[0]
 XeonBotInc.sendMessage(from, buttonMessage, {quoted:m})
 }
 break
-case 'fbdl': case 'fb': case 'facebook': case 'fbmp4': {     	    
+case 'fbdl': case 'fb': case 'facebook': case 'فيسبوك': {     	    
    if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
              if (!text) return reply(`Where is the link bro?\nمثال: ${prefix}facebook https://www.facebook.com/groups/599913174599515/permalink/705467384044093/`)
@@ -6998,7 +6998,7 @@ storee += `\n*「 *PLAY STORE* 」*\n
 }
 reply(storee)
 break
-case 'film':
+case 'فيلم':
 if (isBan) return reply(mess.ban)
 	if (isBanChat) return reply(mess.banChat)
 	reply(mess.wait)
@@ -7082,7 +7082,7 @@ XeonBotInc.sendMessage(m.chat, buttonMessage, { quoted: m })
 })
 }
 break
-case 'happymod': {
+case 'هابي-مود': {
    if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
 if (!args.join(" ")) return replay(`مثال : ${prefix + command} mobile legend`)
@@ -7572,7 +7572,7 @@ if (isBanChat) return reply(mess.banChat)
                 XeonBotInc.sendMessage(m.chat, buttonMessage, { quoted: m })
             }
             break
-case 'wallpaper': case 'animewallpaper': case 'animewall': {
+case 'ويلبر': case 'animewallpaper': case 'animewall': {
 	if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
                 if (!args.join(" ")) return reply("What picture are you looking for??")
@@ -8012,7 +8012,7 @@ break
    }
   break
   case 'tiktokaudio':
-case 'tiktokmusic':
+case 'تيكتوك':
 case 'tiktok':{
 	if (isBan) return reply(mess.ban)
 	if (isBanChat) return reply(mess.banChat)
@@ -8156,8 +8156,8 @@ if (isBanChat) return reply(mess.banChat)
 
 *${themeemoji}TITLE:* ${data.title}\n*${themeemoji}QUALITY:* ${data.medias[0].quality}\n*${themeemoji}SIZE:* ${data.medias[0].formattedSize}\n*${themeemoji}DURATION* ${data.duration}\n*${themeemoji}ID:* ${data.medias[0].cached}\n*${themeemoji}LINK:* ${data.url}\n\n*${botname}*`
   buf = await getBuffer(data.thumbnail)
-  XeonBotInc.sendMessage(m.chat, { image: { url: data.thumbnail }, jpegThumbnail:buf, caption: `${cap}` }, { quoted: m })
-  XeonBotInc.sendMessage(m.chat, { video: { url: data.medias[0].url }, jpegThumbnail:buf, caption: `*${themeemoji}TITLE:* ${data.title}\n*${themeemoji}QUALITY:* ${data.medias[0].quality}\n*${themeemoji}SIZE:* ${data.medias[0].formattedSize}` }, { quoted: m })  
+  XeonBotInc.sendMessage(m.chat, { image: { url: data.thumbnail }, jpegThumbnail:buf, caption: `${cap}` }, { : m })
+  XeonBotInc.sendMessage(m.chat, { video: { url: data.medias[0].url }, jpegThumbnail:buf, caption: `*${themeemoji}TITLE:* ${data.title}\n*${themeemoji}QUALITY:* ${data.medias[0].quality}\n*${themeemoji}SIZE:* ${data.medias[0].formattedSize}` }, { : m })  
                 }).catch((err) => {
                     reply(mess.reply)
                 })
@@ -8188,14 +8188,14 @@ mediaUrl: `${global.websitex}`,
 sourceUrl: `${global.websitex}`
 }}
 }
-XeonBotInc.sendMessage(m.chat, buttonMessage, { quoted: m })
+XeonBotInc.sendMessage(m.chat, buttonMessage, { : m })
 }).catch(_ => _)
 } catch {
 reply("Error")
 }
 }
 break
-case 'mediafire': {
+case 'ميديافاير': {
 	if (isBan) return reply(mess.ban)
 	if (isBanChat) return reply(mess.banChat)
 if (!text) return reply(mess.linkm)
@@ -8209,7 +8209,7 @@ const result4 = `*MEDIAFIRE DOWNLOADER*
 *Mime* : ${baby1[0].mime}
 *Link* : ${baby1[0].link}`
 reply(`${result4}`)
-XeonBotInc.sendMessage(m.chat, { document : { url : baby1[0].link}, fileName : baby1[0].nama, mimetype: baby1[0].mime }, { quoted : m }).catch ((err) => reply(mess.error))
+XeonBotInc.sendMessage(m.chat, { document : { url : baby1[0].link}, fileName : baby1[0].nama, mimetype: baby1[0].mime }, {  : m }).catch ((err) => reply(mess.error))
 }
 break
             case 'umma': case 'ummadl': {
@@ -8224,7 +8224,7 @@ break
                         {buttonId: `ytmp4 ${anu.media[0]} 360p`, buttonText: {displayText: '📽️فيديو📽️'}, type: 1}
                     ]
 		    let buttonMessage = {
-		        image: { url: anu.author.profilePic },
+		        image: { url: anu.author.Pic },
 			caption: `
 ${themeemoji} Title : ${anu.title}
 ${themeemoji} Author : ${anu.author.name}
@@ -8237,10 +8237,10 @@ To Download Media, Please Click One Of The Buttons Below Or Enter The ytmp3/ytmp
 			buttons,
 			headerType: 4
 		    }
-		    XeonBotInc.sendMessage(m.chat, buttonMessage, { quoted: m })
+		    XeonBotInc.sendMessage(m.chat, buttonMessage, { : m })
 		} else if (anu.type == 'image') {
 		    anu.media.map(async (url) => {
-		        XeonBotInc.sendMessage(m.chat, { image: { url }, caption: `${themeemoji} Title : ${anu.title}\n${themeemoji} Author : ${anu.author.name}\n${themeemoji} Like : ${anu.like}\n${themeemoji} Caption : ${anu.caption}` }, { quoted: m })
+		        XeonBotInc.sendMessage(m.chat, { image: { url }, caption: `${themeemoji} Title : ${anu.title}\n${themeemoji} Author : ${anu.author.name}\n${themeemoji} Like : ${anu.like}\n${themeemoji} Caption : ${anu.caption}` }, { : m })
 		    })
 		}
 	    }
@@ -8252,21 +8252,21 @@ To Download Media, Please Click One Of The Buttons Below Or Enter The ytmp3/ytmp
         let { ringtone } = require('./lib/scraper')
 		let anu = await ringtone(text)
 		let result = anu[Math.floor(Math.random() * anu.length)]
-		XeonBotInc.sendMessage(m.chat, { audio: { url: result.audio }, fileName: result.title+'.mp3', mimetype: 'audio/mpeg' }, { quoted: m })
+		XeonBotInc.sendMessage(m.chat, { audio: { url: result.audio }, fileName: result.title+'.mp3', mimetype: 'audio/mpeg' }, { : m })
 	    }
 	    break
 case 'tempo': {
 if (isBan) return reply(mess.ban)
 if (!args.join(" ")) return reply(`مثال: ${prefix + command} 10`)
 var req = args.join(' ')
-media = await XeonBotInc.downloadAndSaveMediaMessage(quoted, "tempo")
+media = await XeonBotInc.downloadAndSaveMediaMessage(, "tempo")
 if (isQuotedAudio) {
 ran = getRandom('.mp3')
 exec(`ffmpeg -i ${media} -filter:a "atempo=1.0,asetrate=${req}" ${ran}`, (err, stderr, stdout) => {
 fs.unlinkSync(media)
 if (err) return reply('Error!')
 hah = fs.readFileSync(ran)
-XeonBotInc.sendMessage(from, {audio:hah, mimetype:'audio/mp4', ptt:true}, {quoted:m})
+XeonBotInc.sendMessage(from, {audio:hah, mimetype:'audio/mp4', ptt:true}, {:m})
 fs.unlinkSync(ran)
 })
 } else if (isQuotedVideo) {
@@ -8275,7 +8275,7 @@ exec(`ffmpeg -i ${media} -filter:a "atempo=1.0,asetrate=${req}" ${ran}`, (err, s
 fs.unlinkSync(media)
 if (err) return reply('Error!')
 hah = fs.readFileSync(ran)
-XeonBotInc.sendMessage(from, {video:hah, mimetype:'video/mp4'}, {quoted:m})
+XeonBotInc.sendMessage(from, {video:hah, mimetype:'video/mp4'}, {:m})
 fs.unlinkSync(ran)
 })
 } else {
@@ -8287,7 +8287,7 @@ case 'volume': {
    if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
 if (!args.join(" ")) return reply(`مثال: ${prefix + command} 10`)
-media = await XeonBotInc.downloadAndSaveMediaMessage(quoted, "volume")
+media = await XeonBotInc.downloadAndSaveMediaMessage(, "volume")
 if (isQuotedAudio) {
 rname = getRandom('.mp3')
 exec(`ffmpeg -i ${media} -filter:a volume=${args[0]} ${rname}`, (err, stderr, stdout) => {
@@ -8311,19 +8311,19 @@ reply("Send video/audio")
 }
 }
 break
-		   case 'دبه': case 'blown': case 'deep': case 'earrape': case 'fast': case 'fat': case 'nightcore': case 'reverse': case 'روبوت': case 'بطئ': case 'smooth': case 'squirrel':
+		   case 'دبه': case 'ضوضاء': case 'بطئ': case 'earrape': case 'سريع': case 'بطئ2': case 'طفل': case 'عكس': case 'روبوت': case 'بطئ': case 'smooth': case 'squirrel':
 		if (isBan) return reply(mess.ban)
 	if (isBanChat) return reply(mess.banChat)
                 try {
                 let set
                 if (/دبه/.test(command)) set = '-af equalizer=f=54:width_type=o:width=2:g=20'
-                if (/blown/.test(command)) set = '-af acrusher=.1:1:64:0:log'
-                if (/deep/.test(command)) set = '-af atempo=4/4,asetrate=44500*2/3'
+                if (/ضوضاء/.test(command)) set = '-af acrusher=.1:1:64:0:log'
+                if (/بطئ/.test(command)) set = '-af atempo=4/4,asetrate=44500*2/3'
                 if (/earrape/.test(command)) set = '-af volume=12'
-                if (/fast/.test(command)) set = '-filter:a "atempo=1.63,asetrate=44100"'
-                if (/fat/.test(command)) set = '-filter:a "atempo=1.6,asetrate=22100"'
-                if (/nightcore/.test(command)) set = '-filter:a atempo=1.06,asetrate=44100*1.25'
-                if (/reverse/.test(command)) set = '-filter_complex "areverse"'
+                if (/سريع/.test(command)) set = '-filter:a "atempo=1.63,asetrate=44100"'
+                if (/بطئ2/.test(command)) set = '-filter:a "atempo=1.6,asetrate=22100"'
+                if (/طفل/.test(command)) set = '-filter:a atempo=1.06,asetrate=44100*1.25'
+                if (/عكس/.test(command)) set = '-filter_complex "areverse"'
                 if (/روبوت/.test(command)) set = '-filter_complex "afftfilt=real=\'hypot(re,im)*sin(0)\':imag=\'hypot(re,im)*cos(0)\':win_size=512:overlap=0.75"'
                 if (/بطئ/.test(command)) set = '-filter:a "atempo=0.7,asetrate=44100"'
                 if (/smooth/.test(command)) set = '-filter:v "minterpolate=\'mi_mode=mci:mc_mode=aobmc:vsbmc=1:fps=120\'"'
@@ -8444,7 +8444,7 @@ View List Of Messages With ${prefix}listmsg`)
 		reply(`Delete Successfully '${text}' From The Message list`)
             }
 	    break
-	    case 'anonymous': {
+	    case 'دردشه': {
 		if (isBan) return reply(mess.ban)
 	if (isBanChat) return reply(mess.banChat)
                 if (m.isGroup) return reply('لا يمكن استخدام الميزات للمجموعات!')
@@ -8455,7 +8455,7 @@ View List Of Messages With ${prefix}listmsg`)
                 XeonBotInc.sendButtonText(m.chat, buttons, `\`\`\`Hi ${await XeonBotInc.getName(m.sender)} مرحبًا بك في الدردشة المجهولة \ n \ n انقر فوق الزر أدناه للعثور على شريك\`\`\``, XeonBotInc.user.name, m)
             }
 			break
-            case 'keluar': case 'leave': {
+            case 'مغادره': case 'leave': {
             	if (isBan) return reply(mess.ban)
 	if (isBanChat) return reply(mess.banChat)
                 if (m.isGroup) return reply('لا يمكن استخدام الميزات للمجموعات!')
@@ -8474,7 +8474,7 @@ View List Of Messages With ${prefix}listmsg`)
                 delete this.anonymous[room.id]
                 if (command === 'leave') break
             }
-            case 'mulai': case 'start': {
+            case 'بدء': case 'start': {
             	if (isBan) return reply(mess.ban)
 	if (isBanChat) return reply(mess.banChat)
                 if (m.isGroup) return reply('لا يمكن استخدام الميزات للمجموعات!')
@@ -8517,7 +8517,7 @@ View List Of Messages With ${prefix}listmsg`)
                 }
                 break
             }
-            case 'next': case 'lanjut': {
+            case 'next': case 'تخطي': {
             	if (isBan) return reply(mess.ban)
 	if (isBanChat) return reply(mess.banChat)
                 if (m.isGroup) return reply('لا يمكن استخدام الميزات للمجموعات!')
@@ -8760,7 +8760,7 @@ reply(`Successfully Reported To The Owner\n\nPlease Make Sure The Bug Is Valid, 
 case 'sc': case 'script': case 'donate': case 'donate': case 'التسجيل': case 'updatebot': case 'cekbot': case 'sourcecode': {
 	if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
-teks = `*「 ${global.botname} Script 」*\n\nيوتيوب: ${global.websitex}\nجروب الدعم: ${global.botscript}\n\nلا تنسى التبرع 🍜`
+teks = `*「 ${global.botname} الدعم 」*\n\nيوتيوب: ${global.websitex}\nجروب الدعم: ${global.botscript}\n\nلا تنسى الاشتراك بالقناه والانضمام لنا بالجروب❤️`
 let buttons = [
 {buttonId: `menu`, buttonText: {displayText: 'القائمه 🌺'}, type: 1}
 ]
@@ -8827,9 +8827,9 @@ XeonBotInc.sendMessage(from, { react: { text: `${global.reactmoji}`, key: m.key 
                         } else if (setbot.templateDocument) {
                         let buttonmenu = [
         	{ urlButton: { displayText: `يوتيوب 🍒`, url : `${websitex}` } },
-            { urlButton: { displayText: `سكربت 🍜`, url: `${botscript}` } },
-            { quickReplyButton: { displayText: `كل القائمه 🍱`, id: 'allmenu'} },
-            { quickReplyButton: { displayText: `قائمه الخيارات 🍢`, id: 'command'} },
+            { urlButton: { displayText: `جروب الدعم ❤️`, url: `${botscript}` } },
+            { quickReplyButton: { displayText: `كل القائمه 🔮`, id: 'allmenu'} },
+            { quickReplyButton: { displayText: `قائمه الخيارات 🕹️`, id: 'command'} },
             { quickReplyButton: { displayText: `المطور 🐼🍷 ،`, id: 'owner'} }
         	]
         	XeonBotInc.sendMessage(m.chat, { caption: menulist, document: fs.readFileSync('./XeonMedia/theme/cheems.xlsx'), mimetype: `${docs}`, fileName: `${ownername}`, templateButtons: buttonmenu, footer: `${botname}`, mentionedJid: [m.sender] })
@@ -8843,21 +8843,21 @@ let template = await generateWAMessageFromContent(m.chat, proto.Message.fromObje
                 listMessage :{
                     title: `هاي ${pushname}`,
                     description: `اختار من القائمه💕\n\n`,
-                    buttonText: "Menu",
+                    buttonText: "القائمه",
                     footerText: `${global.botname}`,
                     listType: "SINGLE_SELECT",
                     sections: [{
 								"title": "الميزات الأولية للبوت 🦄",
 								"rows": [
 									{
-										"title": "اخر ☕",
-										"description": "يعرض قائمة الميزات الأخرى",
+										"title": "قائمه البوت🤖",
+										"description": "يعرض قائمة ميزات البوت",
 										"rowId": `${prefix}othermenu`
 									}
 								]
 							},
 							{
-								"title": "بوت سمات ❤️",
+								"title": "اوامر البوت ❤️",
 								"rows": [
 									{
 										"title": "كل القائمه 🥀",
@@ -8871,11 +8871,11 @@ let template = await generateWAMessageFromContent(m.chat, proto.Message.fromObje
 										},
 									{
 										"title": "قائمه الجروبات ✨",
-										"description": "يعرض قائمة الميزات الرئيسية",
+										"description": "يعرض قائمة ميزات الجروبات",
 										"rowId": `${prefix}groupmenu`
 										},
 										{
-										"title": "قائمه تصميم لوجو 🌈",
+										"title": "قائمه تصميم لوجو 📸",
 										"description": "يعرض قائمة ميزات صنع الشعار",
 										"rowId": `${prefix}indomenu`
 									},
@@ -8885,7 +8885,7 @@ let template = await generateWAMessageFromContent(m.chat, proto.Message.fromObje
 										"rowId": `${prefix}soundmenu`
 									},
 									{
-										"title": "قائمه التحميل ↘️",
+										"title": "قائمه التنزيل 🔄",
 										"description": "يعرض قائمة ميزات التنزيل",
 										"rowId": `${prefix}downloadmenu`
 									},
@@ -8941,8 +8941,8 @@ let template = await generateWAMessageFromContent(m.chat, proto.Message.fromObje
 										},
 										{
 										"title": "قائمه الالعاب 🎮",
-										"description": "يعرض قائمة ميزات اللعبة",
-										"rowId": `${prefix}indomenu`
+										"description": "يعرض قائمة ميزات الالعاب",
+										"rowId": `${prefix}gamemenu`
 									},
 										{
 											"title": "قائمه التحويل ⚒️",
@@ -8977,7 +8977,7 @@ let template = await generateWAMessageFromContent(m.chat, proto.Message.fromObje
 								]
 							},
 							{
-								"title": "Credit ©️",
+								"title": "قائمه الشكر ©️",
 								"rows": [
 									{
 										"title": "قائمه الشكر ❤️",
@@ -9001,55 +9001,33 @@ await XeonBotInc.send5ButImg(from, `╔═══════✪「 قائمه ا
 ╠ ${prefix}خاص
 ╠ ${prefix}عام
 ╠ ${prefix}وهمي
-╠ ${prefix}بان [on/off]
-╠ ${prefix}انضم [link]
+╠ ${prefix}بان
+╠ ${prefix}انضم
 ╠ ${prefix}تغيربايو
-╠ ${prefix}شيرلجروب [text]
-╠ ${prefix}شيرعام [text]
-╠ ${prefix}شيرلصوره [image]
-╠ ${prefix}شيرلفيديو [video]
-╠ ${prefix}شيرلصوتي [audio]
-╠ ${prefix}الموقع [text]
-╠ ${prefix}ضعهاصوره [image]
+╠ ${prefix}ضعهاصوره
 ╠ ${prefix}تغيرالحقوق
-╠ ${prefix}بلوك [tag/number]
-╠ ${prefix}فك البلوك [tag/number]
+╠ ${prefix}بلوك
+╠ ${prefix}فك-البلوك
 ╠═══════✪「 قائمه الجروب 」	        
 ╠${prefix}اعدادات
 ╠${prefix}لينك
-╠${prefix}المؤقت [option]
-╠${prefix}تغيرالصوره [image]
-╠${prefix}تغيرالنيم [text]
-╠${prefix}تغيرالبايو [text]
+╠${prefix}المؤقت
+╠${prefix}استيكرتلقائي
+╠${prefix}تغيرالصوره
+╠${prefix}تغيرالاسم
+╠${prefix}تغيرالبايو
 ╠${prefix}جروب 
-╠${prefix}رسترلينك
-╠${prefix}تعديل [option]
-╠${prefix}اضافه [user]
-╠${prefix}طرد [reply/tag]
-╠${prefix}وهمي [text]
-╠${prefix}تاك [text]
-╠${prefix}antilinkgc [on/off]
-╠${prefix}antilinktg [on/off]
-╠${prefix}antilinktt [on/off]
-╠${prefix}antilinkytch [on/off]
-╠${prefix}antilinkytvid [on/off]
-╠${prefix}antilinkig [on/off]
-╠${prefix}antilinkfb [on/off]
-╠${prefix}antilinktwit [on/off]
-╠${prefix}الروابط [on/off]
-╠${prefix}antivirus [on/off]
-╠${prefix}antitoxic [on/off]
-╠${prefix}antiwame [on/off]
-╠${prefix}autoreply [on/off]
-╠${prefix}الاباحي [on/off]
-╠${prefix}رفع [reply/tag]
-╠${prefix}تنزيل [reply/tag]
-╠${prefix}react [reply emoji]
-╠${prefix}vote
-╠${prefix}devote
-╠${prefix}upvote
-╠${prefix}checkvote
-╠${prefix}delvote
+╠${prefix}رستر
+╠${prefix}تعديل
+╠${prefix}اضافه
+╠${prefix}طرد
+╠${prefix}وهمي
+╠${prefix}منشن
+╠${prefix}الروابط
+╠${prefix}الهكر
+╠${prefix}الاباحي
+╠${prefix}رفع
+╠${prefix}تنزيل
 ╠═══════✪「 قائمه عمل لوجو 」
 ╠${prefix}candy
 ╠${prefix}blackpinkneon
@@ -9155,80 +9133,41 @@ await XeonBotInc.send5ButImg(from, `╔═══════✪「 قائمه ا
 ╠ ${prefix}watercolor
 ╠ ${prefix}classic
 ╠═════✪「 قائمه التنزيل 」	
-╠${prefix}instagram [url]
-╠${prefix}igtv [url]
-╠${prefix}igstory [username]
-╠${prefix}facebook [url]
-╠${prefix}fbmp3 [url]
-╠${prefix}twitter [url]
-╠${prefix}twittermp3 [url]
-╠${prefix}tiktok [url]
-╠${prefix}tiktokaudio[url]
-╠${prefix}tiktoknowm [url]
-╠${prefix}mediafire [url]
-╠${prefix}ytmp3 [url|quality]
-╠${prefix}ytmp4 [url|quality]
-╠${prefix}getmusic [yt link]
-╠${prefix}getvideo [yt link]
-╠${prefix}gitclone [repo link]
-╠${prefix}soundcloud [url]
-╠${prefix}zippyshare [url]
+╠${prefix}انستجرام
+╠${prefix}فيسبوك
+╠${prefix}تويتر
+╠${prefix}تيكتوك
+╠${prefix}ميديافاير
 ╠═══════✪「 قائمه البحث 」	
-╠${prefix}تشغيل [query]
-╠${prefix}شغل [query]
-╠${prefix}yts [query]
-╠${prefix}lyrics [query]
-╠${prefix}جوجل [query]
-╠${prefix}جوجل بلاي [query]
-╠${prefix}gimage [query]
-╠${prefix}pinterest [query]
-╠${prefix}image [query]
-╠${prefix}film [query]
-╠${prefix}wallpaper [query]
-╠${prefix}searchgc [query]
-╠${prefix}happymod [query]
-╠${prefix}servermc
-╠${prefix}mcpedl [query]
-╠${prefix}tvsearch [query]
-╠${prefix}wikimedia [query]
-╠${prefix}ytsearch [query]
-╠${prefix}ringtone [query]
-╠${prefix}webtoon [query]
-╠${prefix}anime [query]
-╠${prefix}animestory [query]
-╠${prefix}manga [query]
-╠${prefix}wattpad [query]
-╠ ${prefix}mcserver [ip|port]
-╠ ${prefix}drakor [query]
+╠${prefix}تشغيل
+╠${prefix}شغل
+╠${prefix}بحث
+╠${prefix}جوجل
+╠${prefix}صوره
+╠${prefix}فيلم
+╠${prefix}ويلبر
+╠ ${prefix}تطقيم
+╠${prefix}هابي-مود
+╠${prefix}مانجا
 ╠═══════✪「 قائمه التحويل 」
-╠ ${prefix}toimage [reply stick]
-╠ ${prefix}sticker [reply img|gif]
-╠ ${prefix}سرقه [reply img|gif|stik]
-╠ ${prefix}اكتب [reply img]
-╠ ${prefix}emoji [emoji]
-╠ ${prefix}tovideo [reply img]
-╠ ${prefix}متحركه [reply stick]
-╠ ${prefix}tourl [reply img]
-╠ ${prefix}tovn [reply aud]
-╠ ${prefix}لصوتي [reply vn]
-╠ ${prefix}toaudio [reply vid]
-╠ ${prefix}ebinary [reply txt]
-╠ ${prefix}dbinary [reply txt]
-╠ ${prefix}tinyurl [link]
-╠ ${prefix}styletext [text]
-╠${prefix}volume [reply aud]
-╠${prefix}tempo [reply aud]
-╠${prefix}bass [reply aud]
-╠${prefix}blown [reply aud]
-╠${prefix}deep [reply aud]
-╠${prefix}earrape [reply aud]
-╠${prefix}fast [reply aud]
-╠${prefix}fat [reply aud]
-╠${prefix}nightcore [reply aud]
-╠${prefix}reverse [reply aud]
-╠${prefix}robot [reply aud]
-╠${prefix}slow [reply aud]
-╠${prefix}squirrel [reply aud]
+╠ ${prefix}لصوره
+╠ ${prefix}ملصق
+╠ ${prefix}دمج
+╠ ${prefix}سرقه
+╠ ${prefix}اكتب
+╠ ${prefix}ايموجي
+╠ ${prefix}لفيديو
+╠ ${prefix}لمتحرك
+╠ ${prefix}لصوتي
+╠ ${prefix}زغرفه
+╠${prefix}دبه
+╠${prefix}صوضاء
+╠${prefix}بطئ
+╠${prefix}سريع
+╠${prefix}بطئ2
+╠${prefix}طفل
+╠${prefix}عكس
+╠${prefix}روبوت
 ╠═══════✪「 قائمه افكتات الصور 」
 ╠${prefix}wanted
 ╠${prefix}blur
@@ -9245,118 +9184,79 @@ await XeonBotInc.send5ButImg(from, `╔═══════✪「 قائمه ا
 ╠${prefix}deleteeffect
 ╠${prefix}pixelate
 ╠═══════✪「 قائمه صور عشوائيه 」
-╠${prefix}coffee
-╠${prefix}bts
-╠${prefix}woof
-╠${prefix}meow
-╠${prefix}lizard
-╠${prefix}wallneon
-╠${prefix}wallpubg
-╠${prefix}wallml
-╠${prefix}wallrandom
-╠${prefix}wallcode
-╠${prefix}animewall [query]
-╠${prefix}animewall2 [query]
-╠═══════✪「 EMOTEقائمه 」
-╠${prefix}instagramemoji
-╠${prefix}facebookemoji
-╠${prefix}iphoneemoji
-╠${prefix}samsungemoji
-╠${prefix}joyemoji
-╠${prefix}skypeemoji
-╠${prefix}twitteremoji
-╠${prefix}whatsappemoji
-╠${prefix}microsoftemoji
-╠${prefix}googleemoji
-╠${prefix}pediaemoji
-╠${prefix}microsoftemoji
+╠${prefix}قهوه
+╠${prefix}كلاب
+╠${prefix}قطه
+╠${prefix}حربايه
+╠═══════✪「 قائمه تحويل ايموجي 」
+╠${prefix}ايموجي-انستجرام
+╠${prefix}ايموجي-فيسبوك
+╠${prefix}ايموجي-ايفون
+╠${prefix}ايموجي-تويتر
+╠${prefix}ايموجي-واتساب
+╠${prefix}ايموجي-جوجل
 ╠═══════✪「 قائمه صور انمي 」
-╠${prefix}تاروتو
-╠${prefix}yaoi
-╠${prefix}neko2
-╠${prefix}waifu
-╠${prefix}waifu2
-╠${prefix}awoo2
-╠${prefix}shinobu
-╠${prefix}waifu3
-╠${prefix}foxgirl
-╠${prefix}megumin2
+╠${prefix}انمي-ناروتو
+╠${prefix}انمي-نيكو
+╠${prefix}انمي-وايفي
+╠${prefix}انمي-وايفي2
 ╠${prefix}لولي
-╠${prefix}8ball
-╠${prefix}animenom
-╠${prefix}goose
-╠${prefix}avatar
-╠${prefix}tickle
-╠${prefix}gecg
-╠${prefix}feed
-╠${prefix}animeslap
-╠${prefix}animespank
-╠${prefix}animepat
-╠${prefix}animeneko
-╠${prefix}animekiss
-╠${prefix}animewlp
-╠${prefix}animecuddle
-╠${prefix}animecry
-╠${prefix}animekill
-╠${prefix}animelick
-╠${prefix}animebite
-╠${prefix}animeyeet
-╠${prefix}animebully
-╠${prefix}animebonk
-╠${prefix}animewink
-╠${prefix}animepoke
-╠${prefix}animesmile
-╠${prefix}animewave
-╠${prefix}animeawoo
-╠${prefix}animeblush
-╠${prefix}animesmug
-╠${prefix}animeglomp
-╠${prefix}animehappy
-╠${prefix}animedance
-╠${prefix}animecringe
-╠${prefix}animehighfive
-╠${prefix}animehandhold
-╠${prefix}animemegumin
-╠${prefix}smug2
-╠${prefix}couplepp
+╠${prefix}انمي-نوم
+╠${prefix}انمي-افاتار
+╠${prefix}انمي-فيد
+╠${prefix}انمي-سليب
+╠${prefix}انمي-سبانك
+╠${prefix}انمي-بات
+╠${prefix}انمي-كيس
+╠${prefix}انمي-كري
+╠${prefix}انمي-كيل
+╠${prefix}انمي-بيتي
+╠${prefix}انمي-بولي
+╠${prefix}انمي-بولك
+╠${prefix}انمي-وينك
+╠${prefix}انمي-بوكي
+╠${prefix}انمي-سميلي
+╠${prefix}انمي-بلوش
+╠${prefix}انمي-سموج
+╠${prefix}انمي-جلومب
+╠${prefix}انمي-هابي
+╠${prefix}انمي-دانسي
+╠${prefix}انمي-هاندهولد
 ╠══════✪「 قائمه استيكرات 」
-╠ ${prefix}patrick
-╠ ${prefix}emoji
-╠ ${prefix}emojimix
-╠ ${prefix}attp
-╠ ${prefix}ttp
+╠ ${prefix}بسيط
+╠ ${prefix}استايل
+╠ ${prefix}استايل2
 ╠ ${prefix}كلب
-╠ ${prefix}lovesticker
+╠ ${prefix}استيكرحب
 ╠════✪「 قائمه استيكرات انمي 」
-╠${prefix}لولي
-╠${prefix}بولي
-╠${prefix}قولدي
-╠${prefix}كراي
-╠${prefix}هوج
-╠${prefix}اووو
-╠${prefix}كيس
-╠${prefix}ليك
-╠${prefix}بات
-╠${prefix}سموج
-╠${prefix}بونك
-╠${prefix}ياات
-╠${prefix}بلسيش
-╠${prefix}صميلي
-╠${prefix}وايفي
-╠${prefix}هاي فايف
-╠${prefix}هاندهولد
-╠${prefix}نوم
-╠${prefix}جلومب
-╠${prefix}بتي
-╠${prefix}سلاب
-╠${prefix}كيل
-╠${prefix}هابي
-╠${prefix}وينك
-╠${prefix}بوكي
-╠${prefix}دانسي
-╠${prefix}كراينج
-╠${prefix}نيكو
-╠${prefix}جيرا
+╠${prefix}bully
+╠${prefix}cuddle
+╠${prefix}cry
+╠${prefix}hug
+╠${prefix}awoo
+╠${prefix}kiss
+╠${prefix}lick
+╠${prefix}pat
+╠${prefix}smug
+╠${prefix}bonk
+╠${prefix}yeet
+╠${prefix}blush
+╠${prefix}smile
+╠${prefix}wave
+╠${prefix}highfive
+╠${prefix}handhold
+╠${prefix}nom
+╠${prefix}glomp
+╠${prefix}bite
+╠${prefix}slap
+╠${prefix}kill
+╠${prefix}happy
+╠${prefix}wink
+╠${prefix}poke
+╠${prefix}dance
+╠${prefix}cringe
+╠${prefix}neko
+╠${prefix}gura
 ╠═══════✪「 قائمه انمي اباحي 」
 ╠${prefix}hentaivideo
 ╠${prefix}yuri
@@ -9384,70 +9284,58 @@ await XeonBotInc.send5ButImg(from, `╔═══════✪「 قائمه ا
 ╠${prefix}hneko
 ╠${prefix}nwaifu
 ╠═══════✪「 قائمه المرح 」
-╠ ${prefix}how [text
-╠ ${prefix}when [text]
-╠ ${prefix}where [text]
-╠ ${prefix}is [text]
-╠ ${prefix}what [text]
-╠ ${prefix}can [text]
-╠ ${prefix}rate [text]
-╠ ${prefix}wangy [text]
-╠ ${prefix}beautifulcheck [tag]
-╠ ${prefix}awesomecheck [tag]
-╠ ${prefix}prettycheck [tag]
-╠ ${prefix}lesbiancheck [tag]
-╠ ${prefix}gaycheck [tag]
-╠ ${prefix}cutecheck [tag]
-╠ ${prefix}uglycheck [tag]
-╠ ${prefix}hornycheck [tag]
-╠ ${prefix}charactercheck [tag]
-╠ ${prefix}lovelycheck [tag]
-╠ ${prefix}couple
-╠ ${prefix}mysoulmate
-╠ ${prefix}hot
-╠ ${prefix}sexy
-╠ ${prefix}kind
-╠ ${prefix}idiot
-╠ ${prefix}handsome
-╠ ${prefix}beautiful
-╠ ${prefix}cute
-╠ ${prefix}pretty
-╠ ${prefix}lesbian
-╠ ${prefix}noob
-╠ ${prefix}bastard
-╠ ${prefix}foolish
-╠ ${prefix}nerd
-╠ ${prefix}asshole
-╠ ${prefix}gay
-╠ ${prefix}smart
-╠ ${prefix}stubble
-╠ ${prefix}dog
-╠ ${prefix}horny
-╠ ${prefix}cunt
-╠ ${prefix}wibu
-╠ ${prefix}noobra
-╠ ${prefix}nibba
-╠ ${prefix}nibbi
-╠ ${prefix}comrade
-╠ ${prefix}mumu
-╠ ${prefix}rascal
-╠ ${prefix}scumbag
-╠ ${prefix}nuts
-╠ ${prefix}fagot
-╠ ${prefix}scoundrel
-╠ ${prefix}ditch
-╠ ${prefix}dope
-╠ ${prefix}gucci
-╠ ${prefix}lit
-╠ ${prefix}dumbass
-╠ ${prefix}crackhead
-╠ ${prefix}mf
-╠ ${prefix}motherfucker
-╠ ${prefix}sucker
-╠ ${prefix}fuckboy
-╠ ${prefix}playboy
-╠ ${prefix}fuckgirl
-╠ ${prefix}playgirl
+╠ ${prefix}زواج
+╠ ${prefix}زوجني
+╠ ${prefix}احمق
+╠ ${prefix}بشع
+╠ ${prefix}جبان
+╠ ${prefix}جميل
+╠ ${prefix}حزين
+╠ ${prefix}حمار
+╠ ${prefix}خروف
+╠ ${prefix}ذكي
+╠ ${prefix}رقاص
+╠ ${prefix}زفت
+╠ ${prefix}سافل
+╠ ${prefix}شجاع
+╠ ${prefix}صادق
+╠ ${prefix}صنم
+╠ ${prefix}طيب
+╠ ${prefix}ظالم
+╠ ${prefix}عاقل
+╠ ${prefix}غامض
+╠ ${prefix}غبي
+╠ ${prefix}قرد
+╠ ${prefix}كاذب
+╠ ${prefix}كريه
+╠ ${prefix}كلب
+╠ ${prefix}مبااع
+╠ ${prefix}مجنون
+╠ ${prefix}محبوب
+╠ ${prefix}محترم
+╠ ${prefix}محتال
+╠ ${prefix}مخادغ
+╠ ${prefix}مخدوع
+╠ ${prefix}مسكين
+╠ ${prefix}مستفز
+╠ ${prefix}مضحك
+╠ ${prefix}مظلوم
+╠ ${prefix}مكروه
+╠ ${prefix}مؤدب
+╠ ${prefix}نجس
+╠ ${prefix}وصخ
+╠ ${prefix}ورع
+╠ ${prefix}شاذ
+╠ ${prefix}علق
+╠ ${prefix}متناك
+╠ ${prefix}خول
+╠ ${prefix}وسخ
+╠ ${prefix}مكروف
+╠ ${prefix}بيتناك
+╠ ${prefix}كس
+╠ ${prefix}معرص
+╠ ${prefix}شرموط
+╠ ${prefix}اهطل
 ╠══════✪「 قائمه صوتيات 」
 ╠ ${prefix}sound1
 ╠ ${prefix}sound2
@@ -9611,18 +9499,15 @@ await XeonBotInc.send5ButImg(from, `╔═══════✪「 قائمه ا
 ╠ ${prefix}sound160
 ╠ ${prefix}sound161
 ╠══════✪「 قائمه الالعاب 」
-╠ ${prefix}truth
-╠ ${prefix}dare
-╠ ${prefix}tictactoe
-╠ ${prefix}delttt
-╠ ${prefix}guess [option]
-╠ ${prefix}math [mode]
-╠ ${prefix}suitpvp [tag]
+╠ ${prefix}اكس-او
+╠ ${prefix}مغادره-الجيم
+╠ ${prefix}حجر(قريبا)
+╠ ${prefix}الاسئله(قريبا)
 ╠══✪「 قائمه محادثه مجهوله 」
-╠${prefix}anonymous
-╠${prefix}start
-╠${prefix}next
-╠${prefix}leave
+╠${prefix}دردشه
+╠${prefix}بدء
+╠${prefix}تخطي
+╠${prefix}مغادره
 ╠══════✪「 قائمه القرآن 」
 ╠ ${prefix}{الشيخ ماهر المعيقلي}
 ╠ ${prefix}سوره الروم
@@ -9715,27 +9600,22 @@ await XeonBotInc.send5ButImg(from, `╔═══════✪「 قائمه ا
 ╠${prefix}masasubur
 ╠${prefix}zodiak
 ╠${prefix}shio
-╠══════✪「 قائمه المالك 」
-╠ ${prefix}afk
-╠ ${prefix}readmore [text]
-╠ ${prefix}toviewonce
-╠ ${prefix}chatinfo
-╠ ${prefix}alive
-╠ ${prefix}script
+╠══════✪「 قائمه الادمن 」
+╠ ${prefix}اختفاء
+╠ ${prefix}المعلومات
+╠ ${prefix}الاوامر
+╠ ${prefix}التسجيل
 ╠ ${prefix}القائمه
-╠ ${prefix}speedtest
-╠ ${prefix}ping
-╠ ${prefix}owner
-╠ ${prefix}menu
-╠ ${prefix}delete
-╠ ${prefix}chatinfo
-╠ ${prefix}quoted
-╠ ${prefix}listpc
-╠ ${prefix}listgc
-╠ ${prefix}donate
-╠ ${prefix}request
-╠ ${prefix}report [bug]
-╚═════════════✪` + '' + ' ', `${botname}`,unicorn, [{"urlButton": {"displayText": "يوتيوب 📍","url": `${websitex}`}},{"urlButton": {"displayText": "سكربت🔖","url": `${botscript}`}},{"quickReplyButton": {"displayText": "تبرع 🍜","id": 'donate'}},{"quickReplyButton": {"displayText": "المطور 👤","id": 'owner'}}] )
+╠ ${prefix}تيست
+╠ ${prefix}بينج
+╠ ${prefix}المطور
+╠ ${prefix}مسح
+╠ ${prefix}الرد
+╠ ${prefix}المستخدمين
+╠ ${prefix}الجروبات
+╠ ${prefix}طلب
+╠ ${prefix}ابلاغ
+╚═════════════✪` + '' + ' ', `${botname}`,unicorn, [{"urlButton": {"displayText": "يوتيوب📍","url": `${websitex}`}},{"urlButton": {"displayText": "الدعم🔖","url": `${botscript}`}},{"quickReplyButton": {"displayText": "تبرع❤️","id": 'donate'}},{"quickReplyButton": {"displayText": "المطور👤","id": 'owner'}}] )
 break
 case 'ownermenu':
 	   if (isBan) return reply(mess.ban)
@@ -9745,20 +9625,14 @@ await XeonBotInc.send5ButImg(from, `╔═══════✪「 قائمه ا
 ╠ ${prefix}خاص
 ╠ ${prefix}عام
 ╠ ${prefix}وهمي
-╠ ${prefix}بان [on/off]
-╠ ${prefix}انضم [link]
+╠ ${prefix}بان
+╠ ${prefix}انضم
 ╠ ${prefix}تغيربايو
-╠ ${prefix}بلوك [user]
-╠ ${prefix}فك البلوك [user]
-╠ ${prefix}شيرلجروب [text]
-╠ ${prefix}شيرعام [text]
-╠ ${prefix}شيرلصوره [image]
-╠ ${prefix}شيرلفيديو [video]
-╠ ${prefix}شيرلصوتي [audio]
-╠ ${prefix}الموقع [text]
-╠ ${prefix}ضعهاصوره [image]
-╠ ${prefix}تغيرالحقوقxif
-╚═════════════✪` + '' + ' ', `${botname}`,unicorn, [{"urlButton": {"displayText": "يوتيوب 📍","url": `${websitex}`}},{"urlButton": {"displayText": "سكربت🔖","url": `${botscript}`}},{"quickReplyButton": {"displayText": "تبرع 🍜","id": 'donate'}},{"quickReplyButton": {"displayText": "المطور 👤","id": 'owner'}}] )
+╠ ${prefix}بلوك
+╠ ${prefix}فك-البلوك
+╠ ${prefix}ضعهاصوره
+╠ ${prefix}تغيرالحقوق
+╚═════════════✪` + '' + ' ', `${botname}`,unicorn, [{"urlButton": {"displayText": "يوتيوب📍","url": `${websitex}`}},{"urlButton": {"displayText": "الدعم🔖","url": `${botscript}`}},{"quickReplyButton": {"displayText": "تبرع❤️","id": 'donate'}},{"quickReplyButton": {"displayText": "المطور👤","id": 'owner'}}] )
 break
 case 'groupmenu':
 	   if (isBan) return reply(mess.ban)
@@ -9767,61 +9641,35 @@ var unicorn = await getBuffer(picak+'Group Menu')
 await XeonBotInc.send5ButImg(from, `╔═══════✪「 قائمه الجروب 」	
 ╠${prefix}اعدادات
 ╠${prefix}لينك
-╠${prefix}المؤقت [option]
-╠${prefix}تغيرالصوره [image]
-╠${prefix}تغيرالنيم [text]
-╠${prefix}تغيرالبايو [text]
+╠${prefix}المؤقت
+╠${prefix}تغيرالصوره
+╠${prefix}تغيرالاسم
+╠${prefix}تغيرالبايو
 ╠${prefix}جروب
-╠${prefix}رسترلينك
-╠${prefix}تعديل [option]
-╠${prefix}اضافه [user]
-╠${prefix}طرد [reply/tag]
-╠${prefix}وهمي [text]
-╠${prefix}تاك [text]
-╠${prefix}autosticker [on/off]
-╠${prefix}autostickerpc [on/off]
-╠${prefix}leveling [on/off]
-╠${prefix}antilinkgc [on/off]
-╠${prefix}antilinktg [on/off]
-╠${prefix}antilinktt [on/off]
-╠${prefix}antilinkytch [on/off]
-╠${prefix}antilinkytvid [on/off]
-╠${prefix}antilinkig [on/off]
-╠${prefix}antilinkfb [on/off]
-╠${prefix}antilinktwit [on/off]
-╠${prefix}الروابط [on/off]
-╠${prefix}الهكر [on/off]
-╠${prefix}antitoxic [on/off]
-╠${prefix}antiwame [on/off]
-╠${prefix}nsfw [on/off]
-╠${prefix}رفع [reply/tag]
-╠${prefix}تنزيل [reply/tag]
-╠${prefix}react [reply emoji]
-╠${prefix}getpp [reply user]
-╠${prefix}vote
-╠${prefix}devote
-╠${prefix}upvote
-╠${prefix}checkvote
-╠${prefix}delvote
-╚═════════════✪` + '' + ' ', `${botname}`,unicorn, [{"urlButton": {"displayText": "يوتيوب 📍","url": `${websitex}`}},{"urlButton": {"displayText": "سكربت🔖","url": `${botscript}`}},{"quickReplyButton": {"displayText": "تبرع 🍜","id": 'donate'}},{"quickReplyButton": {"displayText": "المطور 👤","id": 'owner'}}] )
+╠${prefix}رستر
+╠${prefix}تعديل
+╠${prefix}اضافه
+╠${prefix}طرد
+╠${prefix}وهمي
+╠${prefix}منشن
+╠${prefix}استيكرتلقائي
+╠${prefix}الروابط
+╠${prefix}الهكر
+╠${prefix}الاباحي
+╠${prefix}رفع
+╠${prefix}تنزيل
+╚═════════════✪` + '' + ' ', `${botname}`,unicorn, [{"urlButton": {"displayText": "يوتيوب📍","url": `${websitex}`}},{"urlButton": {"displayText": "الدعم🔖","url": `${botscript}`}},{"quickReplyButton": {"displayText": "تبرع❤️","id": 'donate'}},{"quickReplyButton": {"displayText": "المطور👤","id": 'owner'}}] )
 break
 case 'rpgmenu':
 	   if (isBan) return reply(mess.ban)
 	if (isBanChat) return reply(mess.banChat)
 var unicorn = await getBuffer(picak+'Rpg Menu')
-await XeonBotInc.send5ButImg(from, `╔═══════✪「 RPGقائمه 」	
-╠${prefix}hunt
-╠${prefix}mine
-╠${prefix}fish
-╠${prefix}heal
-╠${prefix}blood
-╠${prefix}stab
-╠${prefix}buy
-╠${prefix}sell
-╠${prefix}profile
-╠${prefix}inventory
-╠${prefix}leaderboard
-╚═════════════✪` + '' + ' ', `${botname}`,unicorn, [{"urlButton": {"displayText": "يوتيوب 📍","url": `${websitex}`}},{"urlButton": {"displayText": "سكربت🔖","url": `${botscript}`}},{"quickReplyButton": {"displayText": "تبرع 🍜","id": 'donate'}},{"quickReplyButton": {"displayText": "المطور 👤","id": 'owner'}}] )
+await XeonBotInc.send5ButImg(from, `╔═══════✪「 قائمه المهام 」	
+╠${prefix}صياده
+╠${prefix}تعدين
+╠${prefix}هيل
+╠${prefix}المبيعات
+╚═════════════✪` + '' + ' ', `${botname}`,unicorn, [{"urlButton": {"displayText": "يوتيوب📍","url": `${websitex}`}},{"urlButton": {"displayText": "الدعم🔖","url": `${botscript}`}},{"quickReplyButton": {"displayText": "تبرع❤️","id": 'donate'}},{"quickReplyButton": {"displayText": "المطور👤","id": 'owner'}}] )
 break
 case 'makermenu':
 	   if (isBan) return reply(mess.ban)
@@ -9935,120 +9783,72 @@ await XeonBotInc.send5ButImg(from, `╔═══════✪「 قائمه ع
 ╠ ${prefix}halloween
 ╠ ${prefix}watercolor
 ╠ ${prefix}classic
-╚═════════════✪` + '' + ' ', `${botname}`,unicorn, [{"urlButton": {"displayText": "يوتيوب 📍","url": `${websitex}`}},{"urlButton": {"displayText": "سكربت🔖","url": `${botscript}`}},{"quickReplyButton": {"displayText": "تبرع 🍜","id": 'donate'}},{"quickReplyButton": {"displayText": "المطور 👤","id": 'owner'}}] )
+╚═════════════✪` + '' + ' ', `${botname}`,unicorn, [{"urlButton": {"displayText": "يوتيوب📍","url": `${websitex}`}},{"urlButton": {"displayText": "الدعم🔖","url": `${botscript}`}},{"quickReplyButton": {"displayText": "تبرع❤️","id": 'donate'}},{"quickReplyButton": {"displayText": "المطور👤","id": 'owner'}}] )
 break
 case 'downloadmenu':
 	   if (isBan) return reply(mess.ban)
 	if (isBanChat) return reply(mess.banChat)
 var unicorn = await getBuffer(picak+'Download Menu')
 await XeonBotInc.send5ButImg(from, `╔═══════✪「 قائمه التنزيل 」	
-╠${prefix}instagram [url]
-╠${prefix}igtv [url]
-╠${prefix}igstory [username]
-╠${prefix}facebook [url]
-╠${prefix}fbmp3 [url]
-╠${prefix}twitter [url]
-╠${prefix}twittermp3 [url]
-╠${prefix}tiktok [url]
-╠${prefix}tiktokaudio [url]
-╠${prefix}tiktoknowm [url]
-╠${prefix}instagram [url]
-╠${prefix}igstory [url]
-╠${prefix}mediafire [url]
-╠${prefix}ytmp3 [url|quality]
-╠${prefix}ytmp4 [url|quality]
-╠${prefix}getmusic [yt link]
-╠${prefix}getvideo [yt link]
-╠${prefix}gitclone [repo link]
-╠${prefix}soundcloud [url]
-╠${prefix}zippyshare [url]
-╚═════════════✪` + '' + ' ', `${botname}`,unicorn, [{"urlButton": {"displayText": "يوتيوب 📍","url": `${websitex}`}},{"urlButton": {"displayText": "سكربت🔖","url": `${botscript}`}},{"quickReplyButton": {"displayText": "تبرع 🍜","id": 'donate'}},{"quickReplyButton": {"displayText": "المطور 👤","id": 'owner'}}] )
+╠${prefix}انستجرام
+╠${prefix}فيسبوك
+╠${prefix}تويتر
+╠${prefix}تيكتوك
+╠${prefix}ميديافاير
+╚═════════════✪` + '' + ' ', `${botname}`,unicorn, [{"urlButton": {"displayText": "يوتيوب📍","url": `${websitex}`}},{"urlButton": {"displayText": "الدعم🔖","url": `${botscript}`}},{"quickReplyButton": {"displayText": "تبرع❤️","id": 'donate'}},{"quickReplyButton": {"displayText": "المطور👤","id": 'owner'}}] )
 break
 case 'searchmenu':
 	   if (isBan) return reply(mess.ban)
 	if (isBanChat) return reply(mess.banChat)
 var unicorn = await getBuffer(picak+'Search Menu')
 await XeonBotInc.send5ButImg(from, `╔═══════✪「 قائمه البحث 」	
-╠${prefix}شغل [query]
-╠${prefix}تشغيل [query]
-╠${prefix}yts [query]
-╠${prefix}lyrics [query]
-╠${prefix}جوجل [query]
-╠${prefix}gimage [query]
-╠${prefix}pinterest [query]
-╠${prefix}image [query]
-╠${prefix}film [query]
-╠${prefix}جوجل بلاي [query]
-╠${prefix}wallpaper [query]
-╠${prefix}searchgc [query]
-╠${prefix}happymod [query]
-╠${prefix}servermc
-╠${prefix}mcpedl [query]
-╠${prefix}tvsearch [query]
-╠${prefix}wikimedia [query]
-╠${prefix}ytsearch [query]
-╠${prefix}ringtone [query]
-╠${prefix}webtoon [query]
-╠${prefix}anime [query]
-╠${prefix}manga [query]
-╠${prefix}wattpad [query]
-╠ ${prefix}mcserver [ip|port]
-╠${prefix}drakor [query]
-╚═════════════✪` + '' + ' ', `${botname}`,unicorn, [{"urlButton": {"displayText": "يوتيوب 📍","url": `${websitex}`}},{"urlButton": {"displayText": "سكربت🔖","url": `${botscript}`}},{"quickReplyButton": {"displayText": "تبرع 🍜","id": 'donate'}},{"quickReplyButton": {"displayText": "المطور 👤","id": 'owner'}}] )
+╠${prefix}تشغيل
+╠${prefix}شغل
+╠${prefix}بحث
+╠${prefix}جوجل
+╠${prefix}صوره
+╠${prefix}فيلم
+╠${prefix}ويلبر
+╠ ${prefix}تطقيم
+╠${prefix}هابي-مود
+╠${prefix}مانجا
+╚═════════════✪` + '' + ' ', `${botname}`,unicorn, [{"urlButton": {"displayText": "يوتيوب📍","url": `${websitex}`}},{"urlButton": {"displayText": "جروب الدعم🔖","url": `${botscript}`}},{"quickReplyButton": {"displayText": "تبرع❤️","id": 'donate'}},{"quickReplyButton": {"displayText": "المطور👤","id": 'owner'}}] )
 break
 case 'convertmenu':
 	   if (isBan) return reply(mess.ban)
 	if (isBanChat) return reply(mess.banChat)
 var unicorn = await getBuffer(picak+'Convert Menu')
 await XeonBotInc.send5ButImg(from, `╔═══════✪「 قائمه التحويل 」	
-╠ ${prefix}toimage [reply stick]
-╠ ${prefix}sticker [reply img|gif]
-╠ ${prefix}سرقه [reply img|gif|stik]
-╠ ${prefix}اكتب [reply img]
-╠ ${prefix}emoji [emoji]
-╠ ${prefix}tovideo [reply img]
-╠ ${prefix}متحركه [reply stick]
-╠ ${prefix}tourl [reply img]
-╠ ${prefix}tovn [reply aud]
-╠ ${prefix}لصوتي [reply vn]
-╠ ${prefix}toaudio [reply vid]
-╠ ${prefix}ebinary [reply txt]
-╠ ${prefix}dbinary [reply txt]
-╠ ${prefix}tinyurl [link]
-╠ ${prefix}styletext [text]
-╠${prefix}volume [reply aud]
-╠${prefix}tempo [reply aud]
-╠${prefix}دبه [reply aud]
-╠${prefix}blown [reply aud]
-╠${prefix}deep [reply aud]
-╠${prefix}earrape [reply aud]
-╠${prefix}fast [reply aud]
-╠${prefix}fat [reply aud]
-╠${prefix}nightcore [reply aud]
-╠${prefix}reverse [reply aud]
-╠${prefix}روبوت [reply aud]
-╠${prefix}بطئ [reply aud]
-╠${prefix}squirrel [reply aud]
-╚═════════════✪` + '' + ' ', `${botname}`,unicorn, [{"urlButton": {"displayText": "يوتيوب 📍","url": `${websitex}`}},{"urlButton": {"displayText": "سكربت🔖","url": `${botscript}`}},{"quickReplyButton": {"displayText": "تبرع 🍜","id": 'donate'}},{"quickReplyButton": {"displayText": "المطور 👤","id": 'owner'}}] )
+╠ ${prefix}لصوره
+╠ ${prefix}ملصق
+╠ ${prefix}دمج
+╠ ${prefix}سرقه
+╠ ${prefix}اكتب
+╠ ${prefix}ايموجي
+╠ ${prefix}لفيديو
+╠ ${prefix}لمتحرك
+╠ ${prefix}لصوتي
+╠ ${prefix}زغرفه
+╠${prefix}دبه
+╠${prefix}صوضاء
+╠${prefix}بطئ
+╠${prefix}سريع
+╠${prefix}بطئ2
+╠${prefix}طفل
+╠${prefix}عكس
+╠${prefix}روبوت
+╚═════════════✪` + '' + ' ', `${botname}`,unicorn, [{"urlButton": {"displayText": "يوتيوب📍","url": `${websitex}`}},{"urlButton": {"displayText": "الدعم🔖","url": `${botscript}`}},{"quickReplyButton": {"displayText": "تبرع❤️","id": 'donate'}},{"quickReplyButton": {"displayText": "المطور👤","id": 'owner'}}] )
 break
 case 'randomimagemenu':
 	   if (isBan) return reply(mess.ban)
 	if (isBanChat) return reply(mess.banChat)
 var unicorn = await getBuffer(picak+'Random Image Menu')
 await XeonBotInc.send5ButImg(from, `╔═══════✪「 قائمه صور عشوائيه 」	
-╠${prefix}coffee
-╠${prefix}bts
-╠${prefix}woof
-╠${prefix}meow
-╠${prefix}lizard
-╠${prefix}wallneon
-╠${prefix}wallpubg
-╠${prefix}wallml
-╠${prefix}wallrandom
-╠${prefix}wallcode
-╠${prefix}animewall [query]
-╠${prefix}animewall2 [query]
-╚═════════════✪` + '' + ' ', `${botname}`,unicorn, [{"urlButton": {"displayText": "يوتيوب 📍","url": `${websitex}`}},{"urlButton": {"displayText": "سكربت🔖","url": `${botscript}`}},{"quickReplyButton": {"displayText": "تبرع 🍜","id": 'donate'}},{"quickReplyButton": {"displayText": "المطور 👤","id": 'owner'}}] )
+╠${prefix}قهوه
+╠${prefix}كلاب
+╠${prefix}قطه
+╠${prefix}حربايه
+╚═════════════✪` + '' + ' ', `${botname}`,unicorn, [{"urlButton": {"displayText": "يوتيوب📍","url": `${websitex}`}},{"urlButton": {"displayText": "الدعم🔖","url": `${botscript}`}},{"quickReplyButton": {"displayText": "تبرع❤️","id": 'donate'}},{"quickReplyButton": {"displayText": "المطور👤","id": 'owner'}}] )
 break
 
 case 'emotemenu':
@@ -10056,19 +9856,13 @@ case 'emotemenu':
 	if (isBanChat) return reply(mess.banChat)
 var unicorn = await getBuffer(picak+'Emote Menu')
 await XeonBotInc.send5ButImg(from, `╔═══════✪「 قائمه تحويل ايموجي 」	
-╠${prefix}instagramemoji
-╠${prefix}facebookemoji
-╠${prefix}iphoneemoji
-╠${prefix}samsungemoji
-╠${prefix}joyemoji
-╠${prefix}skypeemoji
-╠${prefix}twitteremoji
-╠${prefix}whatsappemoji
-╠${prefix}microsoftemoji
-╠${prefix}googleemoji
-╠${prefix}pediaemoji
-╠${prefix}microsoftemoji
-╚═════════════✪` + '' + ' ', `${botname}`,unicorn, [{"urlButton": {"displayText": "يوتيوب 📍","url": `${websitex}`}},{"urlButton": {"displayText": "سكربت🔖","url": `${botscript}`}},{"quickReplyButton": {"displayText": "تبرع 🍜","id": 'donate'}},{"quickReplyButton": {"displayText": "المطور 👤","id": 'owner'}}] )
+╠${prefix}ايموجي-انستجرام
+╠${prefix}ايموجي-فيسبوك
+╠${prefix}ايموجي-ايفون
+╠${prefix}ايموجي-تويتر
+╠${prefix}ايموجي-واتساب
+╠${prefix}ايموجي-جوجل
+╚═════════════✪` + '' + ' ', `${botname}`,unicorn, [{"urlButton": {"displayText": "يوتيوب📍","url": `${websitex}`}},{"urlButton": {"displayText": "الدعم🔖","url": `${botscript}`}},{"quickReplyButton": {"displayText": "تبرع❤️","id": 'donate'}},{"quickReplyButton": {"displayText": "المطور👤","id": 'owner'}}] )
 break
 case 'imageeffectmenu':
 	   if (isBan) return reply(mess.ban)
@@ -10089,111 +9883,86 @@ await XeonBotInc.send5ButImg(from, `╔═════✪「 قائمه افكت
 ╠${prefix}beautifuleffect
 ╠${prefix}deleteeffect
 ╠${prefix}pixelate
-╚═════════════✪` + '' + ' ', `${botname}`,unicorn, [{"urlButton": {"displayText": "يوتيوب 📍","url": `${websitex}`}},{"urlButton": {"displayText": "سكربت🔖","url": `${botscript}`}},{"quickReplyButton": {"displayText": "تبرع 🍜","id": 'donate'}},{"quickReplyButton": {"displayText": "المطور 👤","id": 'owner'}}] )
+╚═════════════✪` + '' + ' ', `${botname}`,unicorn, [{"urlButton": {"displayText": "يوتيوب📍","url": `${websitex}`}},{"urlButton": {"displayText": "الدعم🔖","url": `${botscript}`}},{"quickReplyButton": {"displayText": "تبرع🍜","id": 'donate'}},{"quickReplyButton": {"displayText": "المطور👤","id": 'owner'}}] )
 break
 case 'animemenu':
 	   if (isBan) return reply(mess.ban)
 	if (isBanChat) return reply(mess.banChat)
 var unicorn = await getBuffer(picak+'Anime Menu')
 await XeonBotInc.send5ButImg(from, `╔═══════✪「 قائمه انمي 」	
-╠${prefix}ناروتو
-╠${prefix}yaoi
-╠${prefix}neko2
-╠${prefix}waifu
-╠${prefix}waifu3
-╠${prefix}shinobu
-╠${prefix}awoo2
-╠${prefix}waifu2
-╠${prefix}foxgirl
-╠${prefix}animenom
-╠${prefix}goose
-╠${prefix}8ball
-╠${prefix}avatar
-╠${prefix}tickle
-╠${prefix}gecg
-╠${prefix}feed
-╠${prefix}animeslap
-╠${prefix}animespank
-╠${prefix}animepat
-╠${prefix}animeneko
-╠${prefix}animekiss
-╠${prefix}animewlp
-╠${prefix}animecuddle
-╠${prefix}animecry
-╠${prefix}animekill
-╠${prefix}animelick
-╠${prefix}animebite
-╠${prefix}animeyeet
-╠${prefix}animebully
-╠${prefix}animebonk
-╠${prefix}animewink
-╠${prefix}animepoke
-╠${prefix}animesmile
-╠${prefix}animewave
-╠${prefix}animeawoo
-╠${prefix}animeblush
-╠${prefix}animesmug
-╠${prefix}animeglomp
-╠${prefix}animehappy
-╠${prefix}animedance
-╠${prefix}animecringe
-╠${prefix}animehighfive
-╠${prefix}animehandhold
-╠${prefix}animemegumin
-╠${prefix}megumin2
-╠${prefix}لولي
-╠${prefix}couplepp
-╚═════════════✪` + '' + ' ', `${botname}`,unicorn, [{"urlButton": {"displayText": "يوتيوب 📍","url": `${websitex}`}},{"urlButton": {"displayText": "سكربت🔖","url": `${botscript}`}},{"quickReplyButton": {"displayText": "تبرع 🍜","id": 'donate'}},{"quickReplyButton": {"displayText": "المطور 👤","id": 'owner'}}] )
+╠${prefix}انمي-ناروتو
+╠${prefix}انمي-نيكو
+╠${prefix}انمي-وايفي
+╠${prefix}انمي-وايفي2
+╠${prefix}انمي-نوم
+╠${prefix}انمي-افاتار
+╠${prefix}انمي-فيد
+╠${prefix}انمي-سليب
+╠${prefix}انمي-سبانك
+╠${prefix}انمي-بات
+╠${prefix}انمي-كيس
+╠${prefix}انمي-كري
+╠${prefix}انمي-كيل
+╠${prefix}انمي-بيتي
+╠${prefix}انمي-بولي
+╠${prefix}انمي-بولك
+╠${prefix}انمي-وينك
+╠${prefix}انمي-بوكي
+╠${prefix}انمي-سميلي
+╠${prefix}انمي-بلوش
+╠${prefix}انمي-سموج
+╠${prefix}انمي-جلومب
+╠${prefix}انمي-هابي
+╠${prefix}انمي-دانسي
+╠${prefix}انمي-هاندهولد
+╚═════════════✪` + '' + ' ', `${botname}`,unicorn, [{"urlButton": {"displayText": "يوتيوب📍","url": `${websitex}`}},{"urlButton": {"displayText": "الدعم🔖","url": `${botscript}`}},{"quickReplyButton": {"displayText": "تبرع❤️","id": 'donate'}},{"quickReplyButton": {"displayText": "المطور👤","id": 'owner'}}] )
 break
 case 'stickermenu':
 	   if (isBan) return reply(mess.ban)
 	if (isBanChat) return reply(mess.banChat)
 var unicorn = await getBuffer(picak+'Sticker Menu')
 await XeonBotInc.send5ButImg(from, `╔═══════✪「 قائمه استيكرات 」	
-╠ ${prefix}patrick
-╠ ${prefix}emoji
-╠ ${prefix}emojimix
-╠ ${prefix}attp
-╠ ${prefix}ttp
+╠ ${prefix}بسيط
+╠ ${prefix}استايل
+╠ ${prefix}استايل2
 ╠ ${prefix}كلب
-╠ ${prefix}lovesticker
-╚═════════════✪` + '' + ' ', `${botname}`,unicorn, [{"urlButton": {"displayText": "يوتيوب 📍","url": `${websitex}`}},{"urlButton": {"displayText": "سكربت🔖","url": `${botscript}`}},{"quickReplyButton": {"displayText": "تبرع 🍜","id": 'donate'}},{"quickReplyButton": {"displayText": "المطور 👤","id": 'owner'}}] )
+╠ ${prefix}استيكرحب
+╚═════════════✪` + '' + ' ', `${botname}`,unicorn, [{"urlButton": {"displayText": "يوتيوب📍","url": `${websitex}`}},{"urlButton": {"displayText": "الدعم🔖","url": `${botscript}`}},{"quickReplyButton": {"displayText": "تبرع❤️","id": 'donate'}},{"quickReplyButton": {"displayText": "المطور👤","id": 'owner'}}] )
 break
 case 'animestickermenu':
 	   if (isBan) return reply(mess.ban)
 	if (isBanChat) return reply(mess.banChat)
 var unicorn = await getBuffer(picak+'Anime Sticker Menu')
 await XeonBotInc.send5ButImg(from, `╔═══════✪「 قائمه استيكر انمي 」	
-╠${prefix}لولي
-╠${prefix}بولي
-╠${prefix}قولدي
-╠${prefix}كراي
-╠${prefix}هوج
-╠${prefix}اووو
-╠${prefix}كيس
-╠${prefix}ليك
-╠${prefix}بات
-╠${prefix}سموج
-╠${prefix}بونك
-╠${prefix}ياات
-╠${prefix}بلسيش
-╠${prefix}صميلي
-╠${prefix}وايفي
-╠${prefix}هاي فايف
-╠${prefix}هاندهولد
-╠${prefix}نوم
-╠${prefix}جلومب
-╠${prefix}بتي
-╠${prefix}سلاب
-╠${prefix}كيل
-╠${prefix}هابي
-╠${prefix}وينك
-╠${prefix}بوكي
-╠${prefix}دانسي
-╠${prefix}كراينج
-╠${prefix}نيكو
-╠${prefix}جيرا
-╚═════════════✪` + '' + ' ', `${botname}`,unicorn, [{"urlButton": {"displayText": "يوتيوب 📍","url": `${websitex}`}},{"urlButton": {"displayText": "سكربت🔖","url": `${botscript}`}},{"quickReplyButton": {"displayText": "تبرع 🍜","id": 'donate'}},{"quickReplyButton": {"displayText": "المطور 👤","id": 'owner'}}] )
+╠${prefix}bully
+╠${prefix}cuddle
+╠${prefix}cry
+╠${prefix}hug
+╠${prefix}awoo
+╠${prefix}kiss
+╠${prefix}lick
+╠${prefix}pat
+╠${prefix}smug
+╠${prefix}bonk
+╠${prefix}yeet
+╠${prefix}blush
+╠${prefix}smile
+╠${prefix}wave
+╠${prefix}highfive
+╠${prefix}handhold
+╠${prefix}nom
+╠${prefix}glomp
+╠${prefix}bite
+╠${prefix}slap
+╠${prefix}kill
+╠${prefix}happy
+╠${prefix}wink
+╠${prefix}poke
+╠${prefix}dance
+╠${prefix}cringe
+╠${prefix}neko
+╠${prefix}gura
+╚═════════════✪` + '' + ' ', `${botname}`,unicorn, [{"urlButton": {"displayText": "يوتيوب📍","url": `${websitex}`}},{"urlButton": {"displayText": "الدعم🔖","url": `${botscript}`}},{"quickReplyButton": {"displayText": "تبرع❤️","id": 'donate'}},{"quickReplyButton": {"displayText": "المطور👤","id": 'owner'}}] )
 break
 case 'nsfwmenu':
 	   if (isBan) return reply(mess.ban)
@@ -10225,7 +9994,7 @@ await XeonBotInc.send5ButImg(from, `╔═══════✪「 قائمه ا
 ╠${prefix}spank
 ╠${prefix}hneko
 ╠${prefix}nwaifu
-╚═════════════✪` + '' + ' ', `${botname}`,unicorn, [{"urlButton": {"displayText": "يوتيوب 📍","url": `${websitex}`}},{"urlButton": {"displayText": "سكربت🔖","url": `${botscript}`}},{"quickReplyButton": {"displayText": "تبرع 🍜","id": 'donate'}},{"quickReplyButton": {"displayText": "المطور 👤","id": 'owner'}}] )
+╚═════════════✪` + '' + ' ', `${botname}`,unicorn, [{"urlButton": {"displayText": "يوتيوب📍","url": `${websitex}`}},{"urlButton": {"displayText": "الدعم🔖","url": `${botscript}`}},{"quickReplyButton": {"displayText": "تبرع❤️","id": 'donate'}},{"quickReplyButton": {"displayText": "المطور👤","id": 'owner'}}] )
 break
 case 'funmenu':
 	   if (isBan) return reply(mess.ban)
@@ -10284,7 +10053,7 @@ await XeonBotInc.send5ButImg(from, `╔═══════✪「 قائمه ا
 ╠ ${prefix}معرص
 ╠ ${prefix}شرموط
 ╠ ${prefix}اهطل
-╚═════════════✪` + '' + ' ', `${botname}`,unicorn, [{"urlButton": {"displayText": "يوتيوب 📍","url": `${websitex}`}},{"urlButton": {"displayText": "سكربت🔖","url": `${botscript}`}},{"quickReplyButton": {"displayText": "تبرع 🍜","id": 'donate'}},{"quickReplyButton": {"displayText": "المطور 👤","id": 'owner'}}] )
+╚═════════════✪` + '' + ' ', `${botname}`,unicorn, [{"urlButton": {"displayText": "يوتيوب📍","url": `${websitex}`}},{"urlButton": {"displayText": "الدعم🔖","url": `${botscript}`}},{"quickReplyButton": {"displayText": "تبرع❤️","id": 'donate'}},{"quickReplyButton": {"displayText": "المطور👤","id": 'owner'}}] )
 break
 case 'soundmenu':
 	   if (isBan) return reply(mess.ban)
@@ -10452,21 +10221,18 @@ await XeonBotInc.send5ButImg(from, `╔═══════✪「 قائمه ص
 ╠ ${prefix}sound159
 ╠ ${prefix}sound160
 ╠ ${prefix}sound161
-╚═════════════✪` + '' + ' ', `${botname}`,unicorn, [{"urlButton": {"displayText": "يوتيوب 📍","url": `${websitex}`}},{"urlButton": {"displayText": "سكربت🔖","url": `${botscript}`}},{"quickReplyButton": {"displayText": "تبرع 🍜","id": 'donate'}},{"quickReplyButton": {"displayText": "المطور 👤","id": 'owner'}}] )
+╚═════════════✪` + '' + ' ', `${botname}`,unicorn, [{"urlButton": {"displayText": "يوتيوب📍","url": `${websitex}`}},{"urlButton": {"displayText": "الدعم🔖","url": `${botscript}`}},{"quickReplyButton": {"displayText": "تبرع❤️","id": 'donate'}},{"quickReplyButton": {"displayText": "المطور👤","id": 'owner'}}] )
 break
 case 'gamemenu':
 	   if (isBan) return reply(mess.ban)
 	if (isBanChat) return reply(mess.banChat)
 var unicorn = await getBuffer(picak+'Game Menu')
 await XeonBotInc.send5ButImg(from, `╔═══════✪「 قائمه الالعاب 」	
-╠ ${prefix}truth
-╠ ${prefix}dare
-╠ ${prefix}tictactoe
-╠ ${prefix}delttt
-╠ ${prefix}guess [option]
-╠ ${prefix}math [mode]
-╠ ${prefix}suitpvp [tag]
-╚═════════════✪` + '' + ' ', `${botname}`,unicorn, [{"urlButton": {"displayText": "يوتيوب 📍","url": `${websitex}`}},{"urlButton": {"displayText": "سكربت🔖","url": `${botscript}`}},{"quickReplyButton": {"displayText": "تبرع 🍜","id": 'donate'}},{"quickReplyButton": {"displayText": "المطور 👤","id": 'owner'}}] )
+╠ ${prefix}اكس-او
+╠ ${prefix}مغادره-الجيم
+╠ ${prefix}حجر(قريبا)
+╠ ${prefix}الاسئله(قريبا)
+╚═════════════✪` + '' + ' ', `${botname}`,unicorn, [{"urlButton": {"displayText": "يوتيوب📍","url": `${websitex}`}},{"urlButton": {"displayText": "الدعم🔖","url": `${botscript}`}},{"quickReplyButton": {"displayText": "تبرع❤️","id": 'donate'}},{"quickReplyButton": {"displayText": "المطور👤","id": 'owner'}}] )
 break
 case 'anonymousmenu':
 	   if (isBan) return reply(mess.ban)
@@ -10477,7 +10243,7 @@ await XeonBotInc.send5ButImg(from, `╔═══✪「 قائمه شات مجه�
 ╠${prefix}start
 ╠${prefix}next
 ╠${prefix}leave
-╚═════════════✪` + '' + ' ', `${botname}`,unicorn, [{"urlButton": {"displayText": "يوتيوب 📍","url": `${websitex}`}},{"urlButton": {"displayText": "سكربت🔖","url": `${botscript}`}},{"quickReplyButton": {"displayText": "تبرع 🍜","id": 'donate'}},{"quickReplyButton": {"displayText": "المطور 👤","id": 'owner'}}] )
+╚═════════════✪` + '' + ' ', `${botname}`,unicorn, [{"urlButton": {"displayText": "يوتيوب📍","url": `${websitex}`}},{"urlButton": {"displayText": "الدعم🔖","url": `${botscript}`}},{"quickReplyButton": {"displayText": "تبرع❤️","id": 'donate'}},{"quickReplyButton": {"displayText": "المطور👤","id": 'owner'}}] )
 break
 case 'toolmenu':
 	   if (isBan) return reply(mess.ban)
@@ -10510,7 +10276,7 @@ await XeonBotInc.send5ButImg(from, `╔═══════✪「 قائمه ا
 ╠ ${prefix}سوره التوبه
 ╠ ${prefix}سوره القصص
 ╠ ${prefix}سوره النور
-╚═════════════✪` + '' + ' ', `${botname}`,unicorn, [{"urlButton": {"displayText": "يوتيوب 📍","url": `${websitex}`}},{"urlButton": {"displayText": "سكربت🔖","url": `${botscript}`}},{"quickReplyButton": {"displayText": "تبرع 🍜","id": 'donate'}},{"quickReplyButton": {"displayText": "المطور 👤","id": 'owner'}}] )
+╚═════════════✪` + '' + ' ', `${botname}`,unicorn, [{"urlButton": {"displayText": "يوتيوب📍","url": `${websitex}`}},{"urlButton": {"displayText": "الدعم🔖","url": `${botscript}`}},{"quickReplyButton": {"displayText": "تبرع❤️","id": 'donate'}},{"quickReplyButton": {"displayText": "المطور👤","id": 'owner'}}] )
 break
 case 'databasemenu':
 	   if (isBan) return reply(mess.ban)
@@ -10525,7 +10291,7 @@ await XeonBotInc.send5ButImg(from, `╔═══✪「 قائمه قاعده ا�
 ╠ ${prefix}listmsg
 ╠ ${prefix}getmsg
 ╠ ${prefix}delmsg
-╚═════════════✪` + '' + ' ', `${botname}`,unicorn, [{"urlButton": {"displayText": "يوتيوب 📍","url": `${websitex}`}},{"urlButton": {"displayText": "سكربت🔖","url": `${botscript}`}},{"quickReplyButton": {"displayText": "تبرع 🍜","id": 'donate'}},{"quickReplyButton": {"displayText": "المطور 👤","id": 'owner'}}] )
+╚═════════════✪` + '' + ' ', `${botname}`,unicorn, [{"urlButton": {"displayText": "يوتيوب📍","url": `${websitex}`}},{"urlButton": {"displayText": "الدعم🔖","url": `${botscript}`}},{"quickReplyButton": {"displayText": "تبرع❤️","id": 'donate'}},{"quickReplyButton": {"displayText": "المطور👤","id": 'owner'}}] )
 break
 case 'indomenu':
 	   if (isBan) return reply(mess.ban)
@@ -10556,7 +10322,7 @@ await XeonBotInc.send5ButImg(from, `╔═══════✪「 قائمه ه
 ╠${prefix}covidindo
 ╠${prefix}earthquake
 ╠${prefix}tvschedule
-╚═════════════✪` + '' + ' ', `${botname}`,unicorn, [{"urlButton": {"displayText": "يوتيوب 📍","url": `${websitex}`}},{"urlButton": {"displayText": "سكربت🔖","url": `${botscript}`}},{"quickReplyButton": {"displayText": "تبرع 🍜","id": 'donate'}},{"quickReplyButton": {"displayText": "المطور 👤","id": 'owner'}}] )
+╚═════════════✪` + '' + ' ', `${botname}`,unicorn, [{"urlButton": {"displayText": "يوتيوب📍","url": `${websitex}`}},{"urlButton": {"displayText": "الدعم🔖","url": `${botscript}`}},{"quickReplyButton": {"displayText": "تبرع❤️","id": 'donate'}},{"quickReplyButton": {"displayText": "المطور👤","id": 'owner'}}] )
 break
 case 'indohoroscopemenu':
 	   if (isBan) return reply(mess.ban)
@@ -10593,40 +10359,33 @@ await XeonBotInc.send5ButImg(from, `╔═✪「 قائمه ابراج الهن�
 ╠${prefix}masasubur
 ╠${prefix}zodiak
 ╠${prefix}shio
-╚═════════════✪` + '' + ' ', `${botname}`,unicorn, [{"urlButton": {"displayText": "يوتيوب 📍","url": `${websitex}`}},{"urlButton": {"displayText": "سكربت🔖","url": `${botscript}`}},{"quickReplyButton": {"displayText": "تبرع 🍜","id": 'donate'}},{"quickReplyButton": {"displayText": "المطور 👤","id": 'owner'}}] )
+╚═════════════✪` + '' + ' ', `${botname}`,unicorn, [{"urlButton": {"displayText": "يوتيوب📍","url": `${websitex}`}},{"urlButton": {"displayText": "الدعم🔖","url": `${botscript}`}},{"quickReplyButton": {"displayText": "تبرع❤️","id": 'donate'}},{"quickReplyButton": {"displayText": "المطور👤","id": 'owner'}}] )
 break
 case 'othermenu':
 	   if (isBan) return reply(mess.ban)
 	if (isBanChat) return reply(mess.banChat)
 var unicorn = await getBuffer(picak+'Other Menu')
-await XeonBotInc.send5ButImg(from, `╔═══════✪「 قائمه المالك 」	
-╠ ${prefix}afk
-╠ ${prefix}readmore [text]
-╠ ${prefix}toviewonce
-╠ ${prefix}chatinfo
-╠ ${prefix}alive
-╠ ${prefix}script
+await XeonBotInc.send5ButImg(from, `╔═══════✪「 قائمه الادمن 」	
+╠ ${prefix}اختفاء
+╠ ${prefix}المعلومات
+╠ ${prefix}الاوامر
+╠ ${prefix}التسجيل
 ╠ ${prefix}القائمه
-╠ ${prefix}speedtest
-╠ ${prefix}ping
-╠ ${prefix}owner
-╠ ${prefix}menu
-╠ ${prefix}delete
-╠ ${prefix}chatinfo
-╠ ${prefix}quoted
-╠ ${prefix}listpc
-╠ ${prefix}listgc
-╠ ${prefix}donate
-╠ ${prefix}request
-╠ ${prefix}report [bug]
-╚═════════════✪` + '' + ' ', `${botname}`,unicorn, [{"urlButton": {"displayText": "يوتيوب 📍","url": `${websitex}`}},{"urlButton": {"displayText": "سكربت🔖","url": `${botscript}`}},{"quickReplyButton": {"displayText": "تبرع 🍜","id": 'donate'}},{"quickReplyButton": {"displayText": "المطور 👤","id": 'owner'}}] )
+╠ ${prefix}تيست
+╠ ${prefix}بينج
+╠ ${prefix}المطور
+╠ ${prefix}مسح
+╠ ${prefix}الرد
+╠ ${prefix}المستخدمين
+╠ ${prefix}الجروبات
+╠ ${prefix}طلب
+╠ ${prefix}ابلاغ
+╚═════════════✪` + '' + ' ', `${botname}`,unicorn, [{"urlButton": {"displayText": "يوتيوب📍","url": `${websitex}`}},{"urlButton": {"displayText": "الدعم","url": `${botscript}`}},{"quickReplyButton": {"displayText": "تبرع❤️","id": 'donate'}},{"quickReplyButton": {"displayText": "المطور👤","id": 'owner'}}] )
 break
 case 'tqtt': 
 	   if (isBan) return reply(mess.ban)
 	if (isBanChat) return reply(mess.banChat)
-reply(`شكرا لنفسي🥺💕
-واخويا عبضو 🤡
-وشكرا ليك ياللي بتستخدم البوت🌚💕 `)
+reply(`طبعا اخواتي❤️ / اخويا رايزل❤️ / اخويا اياد❤️ / اخويا اكازا / اخويا غوجو❤️ / اخويا عبدالرحمن❤️/ بس كدا يروحي يريت يكون البوت عجبك❤️`)
 break
             default:
                 if (budy.startsWith('=>')) {
