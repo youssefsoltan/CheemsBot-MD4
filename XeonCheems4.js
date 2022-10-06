@@ -1076,8 +1076,8 @@ It's been ${clockString(new Date - afkTime)}
         if (db.data.users[m.sender].afkTime > -1) {
             let user = global.db.data.users[m.sender]
             reply(`
-You Came Back Online From AFK${user.afkReason ? ' after ' + user.afkReason : ''}
-In ${clockString(new Date - user.afkTime)}
+منور لقد عدت${user.afkReason ? ' after ' + user.afkReason : ''}
+مده الغياب ${clockString(new Date - user.afkTime)}
 `.trim())
             user.afkTime = -1
             user.afkReason = ''
@@ -1558,16 +1558,16 @@ if (!isAdmins && !isCreator) return replay(mess.admin)
 XeonBotInc.groupRevokeInvite(m.chat)
 }
 break
-	    case 'afk': {
+	    case 'اختفاء': {
 		if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
                 let user = global.db.data.users[m.sender]
                 user.afkTime = + new Date
                 user.afkReason = text
-                reply(`${m.pushName} Has Gone Afk/Offline${text ? ': ' + text : ''}`)
+                reply(`${m.pushName} هو الان في وضع الاختفاء${text ? ': ' + text : ''}`)
             }
             break	
-        case 'xo': case 'ttt': case 'tictactoe': {
+        case 'xo': case 'ttt': case 'اكس-او': {
         	if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
             let TicTacToe = require("./lib/tictactoe")
@@ -2270,7 +2270,7 @@ if (isBanChat) return reply(mess.banChat)
                 await XeonBotInc.groupAcceptInvite(result).then((res) => reply(jsonformat(res))).catch((err) => reply(jsonformat(err)))
             }
             break
-                               case 'leavegc': case 'غادر': {
+                               case 'اخرج': case 'غادر': {
 if (isBan) return reply(mess.ban)
 	if (isBanChat) return reply(mess.banChat)
 	reply(mess.wait)
@@ -2282,7 +2282,7 @@ if (isBan) return reply(mess.ban)
             	if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
                if (!isCreator) return replay(`${mess.owner}`)
-               if (!text) return replay(`مثال : ${prefix + command} packname|author`)
+               if (!text) return replay(`مثال : ${prefix + command} تع خد الباقي01098906252|الجزار الوزير يروحي`)
           global.packname = text.split("|")[0]
           global.author = text.split("|")[1]
           reply(`Exif Has Been Successfully Changed to\n\n${themeemoji} Packname : ${global.packname}\n${themeemoji} Author : ${global.author}`)
@@ -2308,7 +2308,7 @@ if (isBanChat) return reply(mess.banChat)
 		await XeonBotInc.groupParticipantsUpdate(m.chat, [users], 'add').then((res) => reply(jsonformat(res))).catch((err) => reply(jsonformat(err)))
 	}
 	break
-	case 'رفع': {
+	case 'رفع': case 'ترقيه': case 'ترقية': {
 		if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
 		if (!m.isGroup) return replay(`${mess.group}`)
@@ -2318,7 +2318,7 @@ if (isBanChat) return reply(mess.banChat)
 		await XeonBotInc.groupParticipantsUpdate(m.chat, [users], 'promote').then((res) => reply(jsonformat(res))).catch((err) => reply(jsonformat(err)))
 	}
 	break
-	case 'تنزيل': {
+	case 'تنزيل': case 'تخفيض': {
 		if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
 		if (!m.isGroup) return replay(`${mess.group}`)
@@ -2336,7 +2336,7 @@ if (isBanChat) return reply(mess.banChat)
 		await XeonBotInc.updateBlockStatus(users, 'block').then((res) => reply(jsonformat(res))).catch((err) => reply(jsonformat(err)))
 	}
 	break
-        case 'فك البلوك': {
+        case 'فك-البلوك': {
         	if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
 		if (!isCreator) return replay(`${mess.owner}`)
@@ -2344,7 +2344,7 @@ if (isBanChat) return reply(mess.banChat)
 		await XeonBotInc.updateBlockStatus(users, 'unblock').then((res) => reply(jsonformat(res))).catch((err) => reply(jsonformat(err)))
 	}
 	break
-	    case 'setname': case 'تغيرالنيم': case 'setsubject': {
+	    case 'تغيرالاسم': case 'تغيرالنيم': case 'setsubject': {
 		if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
                 if (!m.isGroup) return replay(`${mess.group}`)
@@ -2413,7 +2413,7 @@ if (isBanChat) return reply(mess.banChat)
             XeonBotInc.sendMessage(m.chat, { text : q ? q : '' , mentions: participants.map(a => a.id)}, { quoted: m })
             }
             break
-	    case 'style': case 'styletext': {
+	    case 'زغرفه': case 'styletext': {
 		if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
 	        if (!isPremium && global.db.data.users[m.sender].limit < 1) return reply(mess.endLimit) //wont response when limit runs out\\
@@ -2641,19 +2641,19 @@ if (isBanChat) return reply(mess.banChat)
             }
             break
 case 'autosticker':
-            case 'autostiker':
+            case 'استيكرتلقائي':
    if (isBan) return reply(mess.ban)	 			
 if (isBanChat) return reply(mess.banChat)
 if (!m.isGroup) return replay(mess.group)
 if (!isBotAdmins) return reply(mess.botAdmin)
 if (!isAdmins && !isCreator) return reply(mess.admin)
 if (args.length < 1) return reply('اكتب auto sticker on لتمكين \ n إيقاف نوع الملصق التلقائي للتعطيل')
-if (args[0]  === 'on'){
+if (args[0]  === 'فتح'){
 if (isAutoSticker) return reply(`بالفعل تنشيط`)
 autosticker.push(from)
 fs.writeFileSync('./database/autosticker.json', JSON.stringify(autosticker))
 reply('autosticker activated')
-} else if (args[0] === 'off'){
+} else if (args[0] === 'قفل'){
 let anu = autosticker.indexOf(from)
 autosticker.splice(anu, 1)
 fs.writeFileSync('./database/autosticker.json', JSON.stringify(autosticker))
@@ -2666,12 +2666,12 @@ case 'autostickerpc':
 if (isBanChat) return reply(mess.banChat)
 if (!m.isGroup) return replay(mess.group)
 if (args.length < 1) return reply('type autosticker on to activate\ntype autosticker off to disable')
-if (args[0]  === 'on'){
+if (args[0]  === 'فتح'){
 if (isAutoStick) return reply(`بالفعل نشط!! `)
 _autostick.push(from)
 fs.writeFileSync('./database/autostickpc.json', JSON.stringify(autosticker))
 reply('autosticker pc activated')
-} else if (args[0] === 'off'){
+} else if (args[0] === 'قفل'){
 let anu = autosticker.indexOf(from)
 _autostick.splice(anu, 1)
 fs.writeFileSync('./database/autostickpc.json', JSON.stringify(autosticker))
